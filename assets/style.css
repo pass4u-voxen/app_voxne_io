@@ -49,12 +49,17 @@ header.site nav a:hover{color:var(--ink)}
 .meta .tag{color:var(--accent)}
 .post-card h2{font-size:21px;line-height:1.35;margin:10px 0 8px}
 .post-card p{color:var(--muted);margin:0;font-size:15px}
+.post-card .thumb{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;margin:0 0 16px;background:var(--bg-soft)}
 
 /* article */
 article.post{padding:40px 0 64px}
 article.post .meta{margin-bottom:16px}
 article.post h1{font-size:clamp(26px,4.6vw,38px);line-height:1.25;margin:10px 0 10px;letter-spacing:-.01em}
 .lede{color:var(--muted);font-size:18px;margin:0 0 30px}
+.cover{margin:0 0 32px}
+.cover img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--radius);background:var(--bg-soft)}
+.cover figcaption{color:var(--muted);font-size:12px;margin-top:8px;text-align:right}
+.cover figcaption a{text-decoration:underline;text-underline-offset:2px}
 .content{font-size:17px}
 .content h2{font-size:24px;margin:40px 0 12px;letter-spacing:-.01em}
 .content h3{font-size:19px;margin:30px 0 10px}

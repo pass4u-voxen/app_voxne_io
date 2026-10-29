@@ -13,6 +13,8 @@ const WANT_DRAFTS = process.argv.includes("--drafts");
 const cfg = readJson(path.join(ROOT, "config.json"));
 const appsReg = readJson(path.join(ROOT, "content", "apps.json")).apps || [];
 const appBySlug = Object.fromEntries(appsReg.map((a) => [a.slug, a]));
+const coversPath = path.join(ROOT, "content", "covers.json");
+const covers = fs.existsSync(coversPath) ? readJson(coversPath) : {};
 
 marked.setOptions({ gfm: true, breaks: false });
 
@@ -48,7 +50,9 @@ function copyDir(src, dst) {
     e.isDirectory() ? copyDir(s, t) : fs.copyFileSync(s, t);
   }
 }
-const abs = (p) => cfg.base + p;
+const abs = (p) => (/^https?:\/\//.test(p) ? p : cfg.base + p);
+// Unsplash 핫링크 URL (가이드라인: 원본을 내려받아 호스팅하지 않고 hotlink)
+const unsplashUrl = (raw, w, h) => `${raw}?w=${w}&h=${h}&fit=crop&crop=entropy&auto=format&q=80`;
 
 // ---------- load posts ----------
 const postsDir = path.join(ROOT, "content", "posts");
@@ -57,10 +61,14 @@ let posts = fs.readdirSync(postsDir).filter((f) => f.endsWith(".md")).map((file)
   const { data, content } = matter(raw);
   const slug = data.slug || file.replace(/\.md$/, "").replace(/^\d{4}-\d{2}-\d{2}-/, "");
   const date = ymd(data.date || file.slice(0, 10));
+  const credit = !data.cover && covers[slug] ? covers[slug] : null;
   return {
+    cover: data.cover || (credit ? unsplashUrl(credit.raw, 1200, 675) : ""),
+    thumb: data.cover || (credit ? unsplashUrl(credit.raw, 800, 450) : ""),
+    coverAlt: credit ? credit.alt : (data.title || slug), credit,
     slug, title: data.title || slug, description: data.description || "",
     app: data.app || null, date, updated: ymd(data.updated || date),
-    tags: data.tags || [], cover: data.cover || "", draft: !!data.draft,
+    tags: data.tags || [], draft: !!data.draft,
     lang: data.lang || cfg.lang, targetKeyword: data.targetKeyword || "",
     html: marked.parse(content), url: `/${slug}/`,
   };
@@ -110,6 +118,7 @@ function postCard(p) {
   const app = p.app && appBySlug[p.app];
   const tagTxt = app ? app.name : (p.tags[0] || "");
   return `<a class="post-card" href="${p.url}">
+${p.thumb ? `<img class="thumb" src="${esc(p.thumb)}" alt="${esc(p.coverAlt)}" width="800" height="450" loading="lazy">` : ""}
 <div class="meta">${tagTxt ? `<span class="tag">${esc(tagTxt)}</span>` : ""}<span>${fmtDate(p.date)}</span></div>
 <h2>${esc(p.title)}</h2>${p.description ? `<p>${esc(p.description)}</p>` : ""}</a>`;
 }
@@ -143,6 +152,7 @@ function renderPost(p) {
 <div class="meta">${app ? `<span class="tag">${esc(app.name)}</span>` : ""}<span>${fmtDate(p.date)}</span>${p.tags.map((t) => `<span>#${esc(t)}</span>`).join("")}</div>
 <h1>${esc(p.title)}</h1>
 ${p.description ? `<p class="lede">${esc(p.description)}</p>` : ""}
+${p.cover ? `<figure class="cover"><img src="${esc(p.cover)}" alt="${esc(p.coverAlt)}" width="1200" height="675">${p.credit ? `<figcaption>Photo by <a href="${esc(p.credit.photographerUrl)}" target="_blank" rel="noopener">${esc(p.credit.photographer)}</a> on <a href="${esc(p.credit.unsplashUrl)}" target="_blank" rel="noopener">Unsplash</a></figcaption>` : ""}</figure>` : ""}
 <div class="content">${contentHtml}</div>
 ${app ? `<aside class="appbox"><div class="meta"><span class="tag">${esc(app.type || "앱")}</span><span>${esc(app.status || "")}</span></div>
 <h3>${esc(app.name)}</h3><p>${esc(app.summary || app.tagline || "")}</p></aside>` : ""}

@@ -6,7 +6,8 @@ date: 2026-10-29
 updated: 2026-10-29
 tags: [Relaxation, Self-Care, After Work]
 description: "Wondering how to relax after work? Try practical wind-down routines, mindful coloring, and a mini watercolor vacation at home."
-cover: /assets/paintrip-after-work-watercolor.svg
+cover:
+coverQuery: watercolor painting cozy evening desk
 lang: en
 draft: false
 ---

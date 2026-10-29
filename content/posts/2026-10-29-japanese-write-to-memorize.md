@@ -5,6 +5,8 @@ targetKeyword: how to memorize hiragana
 date: 2026-10-29
 updated: 2026-10-29
 tags: [Japanese, hiragana]
+cover:
+coverQuery: handwriting japanese notebook pen
 description: Flashcards not sticking? Here's why looking rarely works for hiragana, and a simple write-to-remember method you can do in 10 minutes a day.
 lang: en
 draft: true

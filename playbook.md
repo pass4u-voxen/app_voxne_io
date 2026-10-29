@@ -14,8 +14,9 @@ Everything you need is in this repo: pick a keyword from `content/keywords/seed.
 4. **Create the file** `content/posts/YYYY-MM-DD-<slug>.md` with the exact frontmatter below. `<slug>` is short, keyword‑based, lowercase‑hyphen (e.g. `how-to-memorize-hiragana`). URL becomes `app.voxen.io/<slug>/`.
 5. **Insert `{{cta}}`** once, right after the paragraph that introduces our app as the solution (the build publishes it as the app's download button).
 6. **Add 1–2 internal links** to related existing posts for the same app, in‑context (`[anchor text](/other-slug/)`). This matters for SEO.
-7. **Mark the keyword `"status": "used"`** in `content/keywords/seed.json` (same commit).
-8. **Commit & push** to `main`. Commit message: `post: <title>`.
+7. **Set `coverQuery`** in the frontmatter (see Frontmatter notes). You don't fetch the image yourself — the build does.
+8. **Mark the keyword `"status": "used"`** in `content/keywords/seed.json` (same commit).
+9. **Commit & push** to `main`. Commit message: `post: <title>`.
 
 ---
 
@@ -31,11 +32,13 @@ updated: YYYY-MM-DD
 tags: [Tag1, Tag2]
 description: <one-sentence meta description, ~140 chars, includes the keyword, written to earn the click>
 cover:
+coverQuery: <2–4 concrete English words describing a photo scene, e.g. "watercolor brushes desk">
 lang: en
 draft: false
 ---
 ```
 
+- `coverQuery` → the build searches Unsplash for this phrase and pins a landscape photo as the post's cover + OG image (`content/covers.json`). Leave `cover:` empty. Write a **concrete, visual scene** ("fountain pen notebook handwriting", "city street cafe evening"), not an abstract concept ("relaxation", "learning"). Never use a brand, game, or character name (brawlcoloring → "kids coloring crayons table"). One photo per post; don't reuse another post's query.
 - `draft: true` → written but **not** published (use when a human should review first — see "When to use draft").
 - `app` must match a `slug` in `content/apps.json`. The build auto‑adds that app's CTA button and info box, so you don't hand‑write store links.
 

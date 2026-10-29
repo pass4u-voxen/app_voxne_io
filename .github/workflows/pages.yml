@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -32,6 +32,22 @@ jobs:
           node-version: '22'
           cache: 'npm'
       - run: npm ci
+      - name: Resolve Unsplash covers (coverQuery → covers.json, API key optional)
+        env:
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+        run: node scripts/fetch-covers.mjs
+      - name: Commit resolved covers
+        run: |
+          if ! git diff --quiet -- content/covers.json; then
+            git config user.name "voxen-bot"
+            git config user.email "bot@voxen.io"
+            git add content/covers.json
+            git commit -m "chore: resolve Unsplash covers"
+            git pull --rebase origin main
+            git push
+          else
+            echo "No new covers."
+          fi
       - run: npm run build
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

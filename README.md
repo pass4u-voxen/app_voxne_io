@@ -18,7 +18,8 @@ date: 2026-11-01
 updated: 2026-11-01    # 수정하면 갱신 (sitemap lastmod에 반영)
 tags: [개발기]
 description: 검색결과·OG에 나올 한 줄 요약 (필수 권장)
-cover:                 # OG 이미지 경로 (없으면 기본 이미지)
+cover:                 # 직접 지정할 이미지 경로 (보통 비움)
+coverQuery: watercolor desk  # Unsplash 검색어 → 빌드가 사진을 찾아 content/covers.json에 고정
 draft: false           # true면 발행 안 됨
 ---
 
