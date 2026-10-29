@@ -1,0 +1,15 @@
+{
+  "apps": [
+    {
+      "slug": "paintrip",
+      "name": "Paintrip",
+      "type": "게임",
+      "tagline": "〈한 줄 소개 — 장르·컨셉을 여기에〉",
+      "status": "개발 중 · 출시 예정",
+      "accent": "#7c5cff",
+      "summary": "〈Paintrip 소개 문단 — 어떤 게임인지, 핵심 재미, 플랫폼 등. 현재 플레이스홀더이니 실제 내용으로 교체하세요.〉",
+      "platforms": ["iOS", "Android"],
+      "links": {}
+    }
+  ]
+}

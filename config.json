@@ -1,0 +1,13 @@
+{
+  "base": "https://app.voxen.io",
+  "cname": "app.voxen.io",
+  "brand": "VOXEN DEV",
+  "title": "VOXEN Dev — 앱·게임 개발 블로그",
+  "description": "VOXEN이 만드는 앱과 게임의 개발기·업데이트·출시 소식을 매일 기록합니다.",
+  "lang": "ko",
+  "author": "VOXEN",
+  "googleSiteVerification": "pezWASMMeA4_8MVjSSsFTzjfIHlpl-JUZ4q7fs5dx5o",
+  "defaultOgImage": "/assets/og-default.svg",
+  "accent": "#7c5cff",
+  "postsPerFeed": 20
+}
