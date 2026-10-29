@@ -145,7 +145,8 @@ function renderPost(p) {
   const headExtra = ld.map((o) => `<script type="application/ld+json">${JSON.stringify(o)}</script>`).join("");
   const related = p.app ? posts.filter((q) => q.app === p.app && q.slug !== p.slug).slice(0, 3) : [];
   const ctaLink = app ? (app.links?.android || app.links?.ios || "#") : "#";
-  const ctaHtml = app ? `<div class="cta"><span class="cta-label">${esc(app.tagline || app.name)}</span><a class="cta-btn" href="${esc(ctaLink)}" target="_blank" rel="noopener">${esc(app.name)} ${p.lang === "en" ? "Get it →" : "받기 →"}</a></div>` : "";
+  const iconHtml = app?.icon ? `<img class="cta-icon" src="${esc(app.icon)}" alt="" width="56" height="56" loading="lazy">` : "";
+  const ctaHtml = app ? `<div class="cta">${iconHtml}<div class="cta-body"><strong class="cta-name">${esc(app.name)}</strong><span class="cta-label">${esc(app.tagline || "")}</span></div><a class="cta-btn" href="${esc(ctaLink)}" target="_blank" rel="noopener">${p.lang === "en" ? "Get the app →" : "앱 받기 →"}</a></div>` : "";
   const contentHtml = p.html.replace(/\{\{\s*cta\s*\}\}/g, ctaHtml);
   const body = `<article class="post">
 <p class="crumb"><a href="/">Home</a>${app ? ` · <a href="/apps/${app.slug}/">${esc(app.name)}</a>` : ""}</p>

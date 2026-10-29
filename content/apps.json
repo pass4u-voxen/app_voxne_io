@@ -9,11 +9,15 @@
       "status": "Live",
       "accent": "#7c5cff",
       "summary": "A calming watercolor coloring app where you color scenes of cities around the world, one piece at a time. A quiet way to unwind and travel from home — collect passport stamps and pin cities on your world map.",
-      "platforms": ["iOS", "Android"],
+      "platforms": [
+        "iOS",
+        "Android"
+      ],
       "links": {
         "android": "https://play.google.com/store/apps/details?id=io.voxen.paintrip",
         "ios": ""
-      }
+      },
+      "icon": "/assets/icons/paintrip.png"
     },
     {
       "slug": "brawlcoloring",
@@ -24,10 +28,13 @@
       "status": "Live",
       "accent": "#ffc400",
       "summary": "A fan coloring app where kids color Brawl Stars characters and learn the Brawlers while they play. New pages are added as new Brawlers arrive.",
-      "platforms": ["Android"],
+      "platforms": [
+        "Android"
+      ],
       "links": {
         "android": "https://play.google.com/store/apps/details?id=air.com.voxen.BSCB"
-      }
+      },
+      "icon": "/assets/icons/brawlcoloring.png"
     },
     {
       "slug": "everyday_japanese",
@@ -38,10 +45,13 @@
       "status": "Live",
       "accent": "#e3576e",
       "summary": "Learn hiragana, katakana, and the basics by writing them with your own hand. There are plenty of apps for memorizing words or listening — but almost none to learn by writing. So we made one.",
-      "platforms": ["Android"],
+      "platforms": [
+        "Android"
+      ],
       "links": {
         "android": "https://play.google.com/store/apps/details?id=com.voxen.everyday_japanese"
-      }
+      },
+      "icon": "/assets/icons/everyday_japanese.png"
     },
     {
       "slug": "daily_hangul",
@@ -52,11 +62,15 @@
       "status": "Live",
       "accent": "#22d3ee",
       "summary": "A Hangul writing-practice app for learners of Korean. Plenty of vocab and phrase apps exist — but almost none let you learn by writing. So we made one.",
-      "platforms": ["iOS", "Android"],
+      "platforms": [
+        "iOS",
+        "Android"
+      ],
       "links": {
         "android": "https://play.google.com/store/apps/details?id=com.voxen.daily_hangul",
         "ios": ""
-      }
+      },
+      "icon": "/assets/icons/daily_hangul.png"
     }
   ]
 }
