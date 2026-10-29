@@ -5,126 +5,501 @@
       "app": "paintrip",
       "appName": "Paintrip",
       "package": "io.voxen.paintrip",
-      "stores": ["google", "ios"],
+      "stores": [
+        "google",
+        "ios"
+      ],
       "audience": "en",
       "oneLiner": "A calming watercolor coloring app where you color world-city scenes to relax and travel from home (psychological rest + wanderlust, esp. women).",
       "funnelHook": "Catch people searching how to relax / de-stress / cope with wanderlust, give genuinely helpful self-care, then naturally introduce 'color world cities in watercolor to unwind'.",
       "cautions": "YMYL (mental wellness). No medical/therapeutic claims ('treats anxiety/depression' X). Frame as relaxation / stress relief / self-care / a calming hobby. No guarantees.",
       "clusters": [
-        {"name": "Stress relief & calming (wellness)", "intent": "feeling stressed, looking for ways to calm down", "keywords": [
-          {"kw": "how to relieve stress", "type": "info", "priority": 1, "status": "queued", "angle": "simple de-stress routines; end with '10-minute color-meditation'"},
-          {"kw": "how to relax after work", "type": "info", "priority": 1, "status": "queued", "angle": "wind-down habits that aren't doomscrolling"},
-          {"kw": "how to calm down when stressed", "type": "info", "priority": 2, "status": "queued", "angle": "grounding with hands-on activity + coloring to shift focus"},
-          {"kw": "self care ideas at home", "type": "info", "priority": 2, "status": "queued", "angle": "low-cost self-care list incl. a calming coloring app"},
-          {"kw": "how to stop overthinking at night", "type": "info", "priority": 3, "status": "queued", "angle": "quiet the mind before bed with a calm activity"}
-        ]},
-        {"name": "Relaxing games & apps", "intent": "looking for calming games/apps", "keywords": [
-          {"kw": "relaxing games", "type": "compare", "priority": 1, "status": "queued", "angle": "no-pressure, no-competition calming games incl. watercolor travel"},
-          {"kw": "games to play before bed", "type": "compare", "priority": 2, "status": "queued", "angle": "quiet games that help you wind down"},
-          {"kw": "cozy mobile games", "type": "compare", "priority": 2, "status": "queued", "angle": "cozy, aesthetic, low-stress mobile games"},
-          {"kw": "best relaxing apps", "type": "compare", "priority": 3, "status": "queued", "angle": "apps that actually help you slow down"}
-        ]},
-        {"name": "Coloring apps", "intent": "looking for a coloring/paint-by-number app", "keywords": [
-          {"kw": "coloring apps for adults", "type": "compare", "priority": 1, "status": "queued", "angle": "why adult coloring relaxes + app recommendation"},
-          {"kw": "paint by numbers app", "type": "compare", "priority": 1, "status": "queued", "angle": "color-by-number that reveals a watercolor, no skill needed"},
-          {"kw": "best coloring app", "type": "compare", "priority": 2, "status": "queued", "angle": "coloring app comparison; watercolor + travel angle"},
-          {"kw": "free coloring games", "type": "transact", "priority": 3, "status": "queued", "angle": "free coloring — a new city free every day"}
-        ]},
-        {"name": "Wanderlust / travel from home", "intent": "missing travel, want an escape", "keywords": [
-          {"kw": "how to deal with wanderlust", "type": "info", "priority": 1, "status": "queued", "angle": "soothe the urge to travel; color cities as a mini-escape"},
-          {"kw": "virtual travel ideas", "type": "info", "priority": 2, "status": "queued", "angle": "ways to 'travel' at home incl. watercolor cities + music"},
-          {"kw": "things to do when you miss traveling", "type": "info", "priority": 3, "status": "queued", "angle": "travel-at-home list"}
-        ]}
+        {
+          "name": "Stress relief & calming (wellness)",
+          "intent": "feeling stressed, looking for ways to calm down",
+          "keywords": [
+            {
+              "kw": "how to relieve stress",
+              "type": "info",
+              "priority": 1,
+              "status": "queued",
+              "angle": "simple de-stress routines; end with '10-minute color-meditation'"
+            },
+            {
+              "kw": "how to relax after work",
+              "type": "info",
+              "priority": 1,
+              "status": "used",
+              "angle": "wind-down habits that aren't doomscrolling"
+            },
+            {
+              "kw": "how to calm down when stressed",
+              "type": "info",
+              "priority": 2,
+              "status": "queued",
+              "angle": "grounding with hands-on activity + coloring to shift focus"
+            },
+            {
+              "kw": "self care ideas at home",
+              "type": "info",
+              "priority": 2,
+              "status": "queued",
+              "angle": "low-cost self-care list incl. a calming coloring app"
+            },
+            {
+              "kw": "how to stop overthinking at night",
+              "type": "info",
+              "priority": 3,
+              "status": "queued",
+              "angle": "quiet the mind before bed with a calm activity"
+            }
+          ]
+        },
+        {
+          "name": "Relaxing games & apps",
+          "intent": "looking for calming games/apps",
+          "keywords": [
+            {
+              "kw": "relaxing games",
+              "type": "compare",
+              "priority": 1,
+              "status": "queued",
+              "angle": "no-pressure, no-competition calming games incl. watercolor travel"
+            },
+            {
+              "kw": "games to play before bed",
+              "type": "compare",
+              "priority": 2,
+              "status": "queued",
+              "angle": "quiet games that help you wind down"
+            },
+            {
+              "kw": "cozy mobile games",
+              "type": "compare",
+              "priority": 2,
+              "status": "queued",
+              "angle": "cozy, aesthetic, low-stress mobile games"
+            },
+            {
+              "kw": "best relaxing apps",
+              "type": "compare",
+              "priority": 3,
+              "status": "queued",
+              "angle": "apps that actually help you slow down"
+            }
+          ]
+        },
+        {
+          "name": "Coloring apps",
+          "intent": "looking for a coloring/paint-by-number app",
+          "keywords": [
+            {
+              "kw": "coloring apps for adults",
+              "type": "compare",
+              "priority": 1,
+              "status": "queued",
+              "angle": "why adult coloring relaxes + app recommendation"
+            },
+            {
+              "kw": "paint by numbers app",
+              "type": "compare",
+              "priority": 1,
+              "status": "queued",
+              "angle": "color-by-number that reveals a watercolor, no skill needed"
+            },
+            {
+              "kw": "best coloring app",
+              "type": "compare",
+              "priority": 2,
+              "status": "queued",
+              "angle": "coloring app comparison; watercolor + travel angle"
+            },
+            {
+              "kw": "free coloring games",
+              "type": "transact",
+              "priority": 3,
+              "status": "queued",
+              "angle": "free coloring — a new city free every day"
+            }
+          ]
+        },
+        {
+          "name": "Wanderlust / travel from home",
+          "intent": "missing travel, want an escape",
+          "keywords": [
+            {
+              "kw": "how to deal with wanderlust",
+              "type": "info",
+              "priority": 1,
+              "status": "queued",
+              "angle": "soothe the urge to travel; color cities as a mini-escape"
+            },
+            {
+              "kw": "virtual travel ideas",
+              "type": "info",
+              "priority": 2,
+              "status": "queued",
+              "angle": "ways to 'travel' at home incl. watercolor cities + music"
+            },
+            {
+              "kw": "things to do when you miss traveling",
+              "type": "info",
+              "priority": 3,
+              "status": "queued",
+              "angle": "travel-at-home list"
+            }
+          ]
+        }
       ]
     },
     {
       "app": "brawlcoloring",
       "appName": "Brawl Stars Coloring",
       "package": "air.com.voxen.BSCB",
-      "stores": ["google"],
+      "stores": [
+        "google"
+      ],
       "audience": "en",
       "oneLiner": "A fan coloring app where kids color Brawl Stars characters and learn the Brawlers while they play.",
       "funnelHook": "Catch kids/parents searching Brawl Stars coloring/drawing, give coloring content, connect to the app. SURF game updates: traffic spikes when a new Brawler/season drops.",
       "cautions": "Brawl Stars is a Supercell trademark. Stay clearly fan-made; never imply official affiliation/endorsement. Trademark risk is the app owner's call (keep content fan-art level).",
       "clusters": [
-        {"name": "New Brawler / updates (seasonal, top)", "intent": "an update/new character just dropped; searching now", "trigger": "Event-triggered, not daily queue. Phase 2: detect Brawl Stars patch news -> auto-generate.", "keywords": [
-          {"kw": "new brawl stars brawler", "type": "info", "priority": 1, "status": "queued", "angle": "intro the new Brawler + color it (publish right after update = traffic spike)"},
-          {"kw": "brawl stars new character coloring", "type": "transact", "priority": 1, "status": "queued", "angle": "color the newest character now"},
-          {"kw": "brawl stars [new brawler name] coloring", "type": "transact", "priority": 1, "status": "queued", "angle": "swap in the real new Brawler name — event content"},
-          {"kw": "brawl stars new update", "type": "info", "priority": 2, "status": "queued", "angle": "update recap -> color the new Brawler"}
-        ]},
-        {"name": "Brawl Stars coloring", "intent": "looking for Brawl Stars coloring/drawing", "keywords": [
-          {"kw": "brawl stars coloring pages", "type": "transact", "priority": 1, "status": "queued", "angle": "where to get pages free — color right in the app"},
-          {"kw": "brawl stars coloring book", "type": "compare", "priority": 1, "status": "queued", "angle": "digital coloring book of all Brawlers"},
-          {"kw": "how to draw brawl stars characters", "type": "info", "priority": 2, "status": "queued", "angle": "easy draw + color, even if you can't draw"},
-          {"kw": "brawl stars drawings easy", "type": "info", "priority": 3, "status": "queued", "angle": "simple Brawler art for kids"}
-        ]},
-        {"name": "Kids coloring (parents)", "intent": "parents looking for a coloring app for kids", "keywords": [
-          {"kw": "coloring games for kids", "type": "compare", "priority": 1, "status": "queued", "angle": "character coloring kids actually want"},
-          {"kw": "free coloring app for kids", "type": "transact", "priority": 2, "status": "queued", "angle": "free, ad-light coloring for kids"},
-          {"kw": "apps to keep kids busy", "type": "info", "priority": 3, "status": "queued", "angle": "quiet-time app for travel/restaurants"}
-        ]}
+        {
+          "name": "New Brawler / updates (seasonal, top)",
+          "intent": "an update/new character just dropped; searching now",
+          "trigger": "Event-triggered, not daily queue. Phase 2: detect Brawl Stars patch news -> auto-generate.",
+          "keywords": [
+            {
+              "kw": "new brawl stars brawler",
+              "type": "info",
+              "priority": 1,
+              "status": "queued",
+              "angle": "intro the new Brawler + color it (publish right after update = traffic spike)"
+            },
+            {
+              "kw": "brawl stars new character coloring",
+              "type": "transact",
+              "priority": 1,
+              "status": "queued",
+              "angle": "color the newest character now"
+            },
+            {
+              "kw": "brawl stars [new brawler name] coloring",
+              "type": "transact",
+              "priority": 1,
+              "status": "queued",
+              "angle": "swap in the real new Brawler name — event content"
+            },
+            {
+              "kw": "brawl stars new update",
+              "type": "info",
+              "priority": 2,
+              "status": "queued",
+              "angle": "update recap -> color the new Brawler"
+            }
+          ]
+        },
+        {
+          "name": "Brawl Stars coloring",
+          "intent": "looking for Brawl Stars coloring/drawing",
+          "keywords": [
+            {
+              "kw": "brawl stars coloring pages",
+              "type": "transact",
+              "priority": 1,
+              "status": "queued",
+              "angle": "where to get pages free — color right in the app"
+            },
+            {
+              "kw": "brawl stars coloring book",
+              "type": "compare",
+              "priority": 1,
+              "status": "queued",
+              "angle": "digital coloring book of all Brawlers"
+            },
+            {
+              "kw": "how to draw brawl stars characters",
+              "type": "info",
+              "priority": 2,
+              "status": "queued",
+              "angle": "easy draw + color, even if you can't draw"
+            },
+            {
+              "kw": "brawl stars drawings easy",
+              "type": "info",
+              "priority": 3,
+              "status": "queued",
+              "angle": "simple Brawler art for kids"
+            }
+          ]
+        },
+        {
+          "name": "Kids coloring (parents)",
+          "intent": "parents looking for a coloring app for kids",
+          "keywords": [
+            {
+              "kw": "coloring games for kids",
+              "type": "compare",
+              "priority": 1,
+              "status": "queued",
+              "angle": "character coloring kids actually want"
+            },
+            {
+              "kw": "free coloring app for kids",
+              "type": "transact",
+              "priority": 2,
+              "status": "queued",
+              "angle": "free, ad-light coloring for kids"
+            },
+            {
+              "kw": "apps to keep kids busy",
+              "type": "info",
+              "priority": 3,
+              "status": "queued",
+              "angle": "quiet-time app for travel/restaurants"
+            }
+          ]
+        }
       ]
     },
     {
       "app": "everyday_japanese",
       "appName": "Daily Writing Japanese",
       "package": "com.voxen.everyday_japanese",
-      "stores": ["google"],
+      "stores": [
+        "google"
+      ],
       "audience": "en",
       "oneLiner": "Learn hiragana/katakana and the basics by writing them by hand — most apps make you memorize or listen, almost none let you learn by writing.",
       "funnelHook": "Catch beginners frustrated that memorizing/listening isn't sticking, teach the write-to-learn method, connect to the one writing-focused app (USP = learn by writing).",
       "cautions": "No exaggerated 'learn in X days' claims. Stroke order / romanization must be accurate.",
       "clusters": [
-        {"name": "Write to learn (USP)", "intent": "reading/flashcards aren't sticking; wants to write", "keywords": [
-          {"kw": "how to learn Japanese by writing", "type": "info", "priority": 1, "status": "queued", "angle": "why writing beats passive review + the write-to-learn app (USP)"},
-          {"kw": "does writing help you learn Japanese", "type": "info", "priority": 1, "status": "queued", "angle": "active recall + motor memory; then the app"},
-          {"kw": "Japanese writing practice app", "type": "transact", "priority": 1, "status": "queued", "angle": "vocab/listening apps exist, writing apps don't -> ours"},
-          {"kw": "best way to memorize Japanese words", "type": "info", "priority": 2, "status": "queued", "angle": "write-and-recall method"},
-          {"kw": "why can't I remember Japanese", "type": "info", "priority": 3, "status": "queued", "angle": "passive input problem -> switch to writing"}
-        ]},
-        {"name": "Hiragana & katakana", "intent": "learning the kana / stroke order", "keywords": [
-          {"kw": "how to memorize hiragana", "type": "info", "priority": 1, "status": "queued", "angle": "memorize hiragana by writing + a daily routine"},
-          {"kw": "hiragana stroke order", "type": "info", "priority": 1, "status": "queued", "angle": "correct stroke order (accuracy critical) + write-along"},
-          {"kw": "how to learn hiragana fast", "type": "info", "priority": 2, "status": "queued", "angle": "fast but real: write, cover, recall"},
-          {"kw": "katakana vs hiragana", "type": "info", "priority": 2, "status": "queued", "angle": "tell them apart + practice writing both"},
-          {"kw": "hiragana chart", "type": "info", "priority": 3, "status": "queued", "angle": "chart + the order to actually learn them"}
-        ]},
-        {"name": "Learn Japanese (beginner)", "intent": "starting Japanese, where to begin", "keywords": [
-          {"kw": "how to learn Japanese for beginners", "type": "info", "priority": 2, "status": "queued", "angle": "roadmap: start by writing kana"},
-          {"kw": "how to start learning Japanese", "type": "info", "priority": 2, "status": "queued", "angle": "first steps, write from day one"},
-          {"kw": "best app to learn Japanese writing", "type": "compare", "priority": 3, "status": "queued", "angle": "writing-app comparison"}
-        ]}
+        {
+          "name": "Write to learn (USP)",
+          "intent": "reading/flashcards aren't sticking; wants to write",
+          "keywords": [
+            {
+              "kw": "how to learn Japanese by writing",
+              "type": "info",
+              "priority": 1,
+              "status": "queued",
+              "angle": "why writing beats passive review + the write-to-learn app (USP)"
+            },
+            {
+              "kw": "does writing help you learn Japanese",
+              "type": "info",
+              "priority": 1,
+              "status": "queued",
+              "angle": "active recall + motor memory; then the app"
+            },
+            {
+              "kw": "Japanese writing practice app",
+              "type": "transact",
+              "priority": 1,
+              "status": "queued",
+              "angle": "vocab/listening apps exist, writing apps don't -> ours"
+            },
+            {
+              "kw": "best way to memorize Japanese words",
+              "type": "info",
+              "priority": 2,
+              "status": "queued",
+              "angle": "write-and-recall method"
+            },
+            {
+              "kw": "why can't I remember Japanese",
+              "type": "info",
+              "priority": 3,
+              "status": "queued",
+              "angle": "passive input problem -> switch to writing"
+            }
+          ]
+        },
+        {
+          "name": "Hiragana & katakana",
+          "intent": "learning the kana / stroke order",
+          "keywords": [
+            {
+              "kw": "how to memorize hiragana",
+              "type": "info",
+              "priority": 1,
+              "status": "queued",
+              "angle": "memorize hiragana by writing + a daily routine"
+            },
+            {
+              "kw": "hiragana stroke order",
+              "type": "info",
+              "priority": 1,
+              "status": "queued",
+              "angle": "correct stroke order (accuracy critical) + write-along"
+            },
+            {
+              "kw": "how to learn hiragana fast",
+              "type": "info",
+              "priority": 2,
+              "status": "queued",
+              "angle": "fast but real: write, cover, recall"
+            },
+            {
+              "kw": "katakana vs hiragana",
+              "type": "info",
+              "priority": 2,
+              "status": "queued",
+              "angle": "tell them apart + practice writing both"
+            },
+            {
+              "kw": "hiragana chart",
+              "type": "info",
+              "priority": 3,
+              "status": "queued",
+              "angle": "chart + the order to actually learn them"
+            }
+          ]
+        },
+        {
+          "name": "Learn Japanese (beginner)",
+          "intent": "starting Japanese, where to begin",
+          "keywords": [
+            {
+              "kw": "how to learn Japanese for beginners",
+              "type": "info",
+              "priority": 2,
+              "status": "queued",
+              "angle": "roadmap: start by writing kana"
+            },
+            {
+              "kw": "how to start learning Japanese",
+              "type": "info",
+              "priority": 2,
+              "status": "queued",
+              "angle": "first steps, write from day one"
+            },
+            {
+              "kw": "best app to learn Japanese writing",
+              "type": "compare",
+              "priority": 3,
+              "status": "queued",
+              "angle": "writing-app comparison"
+            }
+          ]
+        }
       ]
     },
     {
       "app": "daily_hangul",
       "appName": "Daily Writing Hangul",
       "package": "com.voxen.daily_hangul",
-      "stores": ["google", "ios"],
+      "stores": [
+        "google",
+        "ios"
+      ],
       "audience": "en",
       "oneLiner": "Learn Korean by writing Hangul by hand — plenty of vocab/phrase apps exist, almost none to learn by writing.",
       "funnelHook": "Catch learners searching how to learn/write Hangul, teach the write-to-learn method, connect to the one writing-focused app (USP = learn by writing).",
       "cautions": "Accurate Hangul stroke order / romanization required. No exaggerated 'learn in X days' claims.",
       "clusters": [
-        {"name": "Write to learn (USP)", "intent": "memorizing by reading isn't sticking; wants to write", "keywords": [
-          {"kw": "how to learn Korean by writing", "type": "info", "priority": 1, "status": "queued", "angle": "why writing beats passive review + the write-to-learn app (USP)"},
-          {"kw": "learn Hangul by writing", "type": "info", "priority": 1, "status": "queued", "angle": "step-by-step write-along for Hangul"},
-          {"kw": "Korean handwriting practice app", "type": "transact", "priority": 1, "status": "queued", "angle": "vocab/phrase apps exist, writing apps don't -> ours"},
-          {"kw": "best way to memorize Hangul", "type": "info", "priority": 2, "status": "queued", "angle": "memory: writing aids retention"},
-          {"kw": "practice writing Korean alphabet", "type": "transact", "priority": 3, "status": "queued", "angle": "daily write-along practice"}
-        ]},
-        {"name": "Hangul basics (how-to)", "intent": "absolute beginner learning the alphabet", "keywords": [
-          {"kw": "how to write Hangul", "type": "info", "priority": 1, "status": "queued", "angle": "Hangul writing basics + stroke order"},
-          {"kw": "Hangul stroke order", "type": "info", "priority": 1, "status": "queued", "angle": "correct stroke order guide (accuracy critical)"},
-          {"kw": "Korean alphabet for beginners", "type": "info", "priority": 2, "status": "queued", "angle": "learn Hangul from zero, write each letter"},
-          {"kw": "how to read and write Korean", "type": "info", "priority": 3, "status": "queued", "angle": "read + write together"}
-        ]},
-        {"name": "Learn Korean (self-study)", "intent": "starting Korean, choosing where to begin", "keywords": [
-          {"kw": "how to learn Korean for beginners", "type": "info", "priority": 2, "status": "queued", "angle": "roadmap: start with writing Hangul"},
-          {"kw": "learn Korean alphabet first", "type": "info", "priority": 2, "status": "queued", "angle": "why alphabet-first + write it"},
-          {"kw": "best app to learn Korean writing", "type": "compare", "priority": 3, "status": "queued", "angle": "app comparison for writing"}
-        ]}
+        {
+          "name": "Write to learn (USP)",
+          "intent": "memorizing by reading isn't sticking; wants to write",
+          "keywords": [
+            {
+              "kw": "how to learn Korean by writing",
+              "type": "info",
+              "priority": 1,
+              "status": "queued",
+              "angle": "why writing beats passive review + the write-to-learn app (USP)"
+            },
+            {
+              "kw": "learn Hangul by writing",
+              "type": "info",
+              "priority": 1,
+              "status": "queued",
+              "angle": "step-by-step write-along for Hangul"
+            },
+            {
+              "kw": "Korean handwriting practice app",
+              "type": "transact",
+              "priority": 1,
+              "status": "queued",
+              "angle": "vocab/phrase apps exist, writing apps don't -> ours"
+            },
+            {
+              "kw": "best way to memorize Hangul",
+              "type": "info",
+              "priority": 2,
+              "status": "queued",
+              "angle": "memory: writing aids retention"
+            },
+            {
+              "kw": "practice writing Korean alphabet",
+              "type": "transact",
+              "priority": 3,
+              "status": "queued",
+              "angle": "daily write-along practice"
+            }
+          ]
+        },
+        {
+          "name": "Hangul basics (how-to)",
+          "intent": "absolute beginner learning the alphabet",
+          "keywords": [
+            {
+              "kw": "how to write Hangul",
+              "type": "info",
+              "priority": 1,
+              "status": "queued",
+              "angle": "Hangul writing basics + stroke order"
+            },
+            {
+              "kw": "Hangul stroke order",
+              "type": "info",
+              "priority": 1,
+              "status": "queued",
+              "angle": "correct stroke order guide (accuracy critical)"
+            },
+            {
+              "kw": "Korean alphabet for beginners",
+              "type": "info",
+              "priority": 2,
+              "status": "queued",
+              "angle": "learn Hangul from zero, write each letter"
+            },
+            {
+              "kw": "how to read and write Korean",
+              "type": "info",
+              "priority": 3,
+              "status": "queued",
+              "angle": "read + write together"
+            }
+          ]
+        },
+        {
+          "name": "Learn Korean (self-study)",
+          "intent": "starting Korean, choosing where to begin",
+          "keywords": [
+            {
+              "kw": "how to learn Korean for beginners",
+              "type": "info",
+              "priority": 2,
+              "status": "queued",
+              "angle": "roadmap: start with writing Hangul"
+            },
+            {
+              "kw": "learn Korean alphabet first",
+              "type": "info",
+              "priority": 2,
+              "status": "queued",
+              "angle": "why alphabet-first + write it"
+            },
+            {
+              "kw": "best app to learn Korean writing",
+              "type": "compare",
+              "priority": 3,
+              "status": "queued",
+              "angle": "app comparison for writing"
+            }
+          ]
+        }
       ]
     }
   ]
