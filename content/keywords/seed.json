@@ -29,7 +29,7 @@
               "kw": "how to relax after work",
               "type": "info",
               "priority": 1,
-              "status": "used",
+              "status": "queued",
               "angle": "wind-down habits that aren't doomscrolling"
             },
             {
@@ -131,7 +131,7 @@
               "kw": "how to deal with wanderlust",
               "type": "info",
               "priority": 1,
-              "status": "queued",
+              "status": "used",
               "angle": "soothe the urge to travel; color cities as a mini-escape"
             },
             {
