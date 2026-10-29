@@ -1,0 +1,33 @@
+name: GSC opportunity keywords
+
+on:
+  schedule:
+    - cron: '0 0 * * 1'   # 매주 월요일 00:00 UTC (09:00 KST)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Fetch opportunity keywords from Search Console
+        env:
+          GSC_SA_KEY: ${{ secrets.GSC_SA_KEY }}
+        run: node scripts/gsc-opportunities.mjs
+      - name: Commit if changed
+        run: |
+          if ! git diff --quiet -- content/keywords/opportunities.json; then
+            git config user.name "voxen-bot"
+            git config user.email "bot@voxen.io"
+            git add content/keywords/opportunities.json
+            git commit -m "chore: refresh GSC opportunity keywords"
+            git push
+          else
+            echo "No change in opportunities."
+          fi
