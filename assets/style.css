@@ -98,5 +98,7 @@ footer.site .sp{margin-left:auto}
 .cta-body{display:flex;flex-direction:column;gap:2px;flex:1;min-width:160px}
 .cta-name{font-size:16px;font-weight:800}
 .cta-label{color:var(--muted);font-size:14px}
-.cta-btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;font-size:15px;padding:12px 22px;border-radius:999px;box-shadow:0 6px 20px rgba(124,92,255,.35);white-space:nowrap}
-.cta-btn:hover{filter:brightness(1.08)}
+.cta-stores{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.cta-stores .badge{display:inline-flex;line-height:0;transition:transform .15s,filter .15s}
+.cta-stores .badge:hover{transform:translateY(-1px);filter:brightness(1.15)}
+.cta-stores img{height:40px;width:auto;border-radius:6px}

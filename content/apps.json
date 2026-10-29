@@ -15,7 +15,7 @@
       ],
       "links": {
         "android": "https://play.google.com/store/apps/details?id=io.voxen.paintrip",
-        "ios": ""
+        "ios": "https://apps.apple.com/app/paintrip-watercolor-travel/id6821364106"
       },
       "icon": "/assets/icons/paintrip.png"
     },
@@ -68,7 +68,7 @@
       ],
       "links": {
         "android": "https://play.google.com/store/apps/details?id=com.voxen.daily_hangul",
-        "ios": ""
+        "ios": "https://apps.apple.com/app/daily-writing-hangul/id6768184973"
       },
       "icon": "/assets/icons/daily_hangul.png"
     }

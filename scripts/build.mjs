@@ -144,9 +144,12 @@ function renderPost(p) {
   });
   const headExtra = ld.map((o) => `<script type="application/ld+json">${JSON.stringify(o)}</script>`).join("");
   const related = p.app ? posts.filter((q) => q.app === p.app && q.slug !== p.slug).slice(0, 3) : [];
-  const ctaLink = app ? (app.links?.android || app.links?.ios || "#") : "#";
+  const storeBadges = app ? [
+    app.links?.android && `<a class="badge" href="${esc(app.links.android)}" target="_blank" rel="noopener" aria-label="Get ${esc(app.name)} on Google Play"><img src="/assets/badges/google-play.png" alt="Get it on Google Play" height="40" width="103" loading="lazy"></a>`,
+    app.links?.ios && `<a class="badge" href="${esc(app.links.ios)}" target="_blank" rel="noopener" aria-label="Download ${esc(app.name)} on the App Store"><img src="/assets/badges/app-store.svg" alt="Download on the App Store" height="40" width="120" loading="lazy"></a>`,
+  ].filter(Boolean).join("") : "";
   const iconHtml = app?.icon ? `<img class="cta-icon" src="${esc(app.icon)}" alt="" width="56" height="56" loading="lazy">` : "";
-  const ctaHtml = app ? `<div class="cta">${iconHtml}<div class="cta-body"><strong class="cta-name">${esc(app.name)}</strong><span class="cta-label">${esc(app.tagline || "")}</span></div><a class="cta-btn" href="${esc(ctaLink)}" target="_blank" rel="noopener">${p.lang === "en" ? "Get the app →" : "앱 받기 →"}</a></div>` : "";
+  const ctaHtml = app ? `<div class="cta">${iconHtml}<div class="cta-body"><strong class="cta-name">${esc(app.name)}</strong><span class="cta-label">${esc(app.tagline || "")}</span></div><div class="cta-stores">${storeBadges}</div></div>` : "";
   const contentHtml = p.html.replace(/\{\{\s*cta\s*\}\}/g, ctaHtml);
   const body = `<article class="post">
 <p class="crumb"><a href="/">Home</a>${app ? ` · <a href="/apps/${app.slug}/">${esc(app.name)}</a>` : ""}</p>
