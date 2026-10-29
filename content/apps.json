@@ -3,13 +3,60 @@
     {
       "slug": "paintrip",
       "name": "Paintrip",
-      "type": "게임",
-      "tagline": "〈한 줄 소개 — 장르·컨셉을 여기에〉",
-      "status": "개발 중 · 출시 예정",
+      "type": "Relaxation",
+      "audience": "en",
+      "tagline": "Travel the world in watercolor",
+      "status": "Live",
       "accent": "#7c5cff",
-      "summary": "〈Paintrip 소개 문단 — 어떤 게임인지, 핵심 재미, 플랫폼 등. 현재 플레이스홀더이니 실제 내용으로 교체하세요.〉",
+      "summary": "A calming watercolor coloring app where you color scenes of cities around the world, one piece at a time. A quiet way to unwind and travel from home — collect passport stamps and pin cities on your world map.",
       "platforms": ["iOS", "Android"],
-      "links": {}
+      "links": {
+        "android": "https://play.google.com/store/apps/details?id=io.voxen.paintrip",
+        "ios": ""
+      }
+    },
+    {
+      "slug": "brawlcoloring",
+      "name": "Brawl Stars Coloring",
+      "type": "Coloring",
+      "audience": "en",
+      "tagline": "Color and get to know your favorite Brawlers",
+      "status": "Live",
+      "accent": "#ffc400",
+      "summary": "A fan coloring app where kids color Brawl Stars characters and learn the Brawlers while they play. New pages are added as new Brawlers arrive.",
+      "platforms": ["Android"],
+      "links": {
+        "android": "https://play.google.com/store/apps/details?id=air.com.voxen.BSCB"
+      }
+    },
+    {
+      "slug": "everyday_japanese",
+      "name": "Daily Writing Japanese",
+      "type": "Japanese learning",
+      "audience": "en",
+      "tagline": "Learn Japanese by actually writing it",
+      "status": "Live",
+      "accent": "#e3576e",
+      "summary": "Learn hiragana, katakana, and the basics by writing them with your own hand. There are plenty of apps for memorizing words or listening — but almost none to learn by writing. So we made one.",
+      "platforms": ["Android"],
+      "links": {
+        "android": "https://play.google.com/store/apps/details?id=com.voxen.everyday_japanese"
+      }
+    },
+    {
+      "slug": "daily_hangul",
+      "name": "Daily Writing Hangul",
+      "type": "Korean learning",
+      "audience": "en",
+      "tagline": "Learn Korean by actually writing it",
+      "status": "Live",
+      "accent": "#22d3ee",
+      "summary": "A Hangul writing-practice app for learners of Korean. Plenty of vocab and phrase apps exist — but almost none let you learn by writing. So we made one.",
+      "platforms": ["iOS", "Android"],
+      "links": {
+        "android": "https://play.google.com/store/apps/details?id=com.voxen.daily_hangul",
+        "ios": ""
+      }
     }
   ]
 }

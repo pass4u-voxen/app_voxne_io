@@ -13,6 +13,6 @@
   <rect width="1200" height="630" fill="url(#glow)"/>
   <circle cx="110" cy="300" r="13" fill="#7c5cff"/>
   <text x="140" y="312" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="30" letter-spacing="8" font-weight="800" fill="#ececf4">VOXEN DEV</text>
-  <text x="110" y="420" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="58" font-weight="800" fill="#ececf4">앱·게임 개발 블로그</text>
-  <text x="110" y="480" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="26" fill="#9a9ab0">VOXEN이 만드는 제품의 개발기 · 업데이트 · 출시 소식</text>
+  <text x="110" y="420" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="58" font-weight="800" fill="#ececf4">App &amp; Game Devlog</text>
+  <text x="110" y="480" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="26" fill="#9a9ab0">Guides, devlogs &amp; launch notes from VOXEN</text>
 </svg>

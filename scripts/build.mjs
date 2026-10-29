@@ -61,6 +61,7 @@ let posts = fs.readdirSync(postsDir).filter((f) => f.endsWith(".md")).map((file)
     slug, title: data.title || slug, description: data.description || "",
     app: data.app || null, date, updated: ymd(data.updated || date),
     tags: data.tags || [], cover: data.cover || "", draft: !!data.draft,
+    lang: data.lang || cfg.lang, targetKeyword: data.targetKeyword || "",
     html: marked.parse(content), url: `/${slug}/`,
   };
 }).filter((p) => WANT_DRAFTS || !p.draft);
@@ -70,10 +71,11 @@ if (new Set(posts.map((p) => p.slug)).size !== posts.length)
   throw new Error("중복 슬러그가 있습니다. 파일명/슬러그를 확인하세요.");
 
 // ---------- layout ----------
-function layout({ title, description, canonical, headExtra = "", body, ogType = "website", ogImage }) {
+function layout({ title, description, canonical, headExtra = "", body, ogType = "website", ogImage, lang = cfg.lang }) {
   const img = abs(ogImage || cfg.defaultOgImage);
+  const ogLocale = lang === "en" ? "en_US" : "ko_KR";
   const navApps = appsReg.filter((a) => posts.some((p) => p.app === a.slug)).slice(0, 6);
-  return `<!doctype html><html lang="${cfg.lang}"><head>
+  return `<!doctype html><html lang="${lang}"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
@@ -83,7 +85,7 @@ function layout({ title, description, canonical, headExtra = "", body, ogType = 
 <meta property="og:type" content="${ogType}"><meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${esc(canonical)}">
 <meta property="og:site_name" content="${esc(cfg.brand)}"><meta property="og:image" content="${esc(img)}">
-<meta property="og:locale" content="ko_KR">
+<meta property="og:locale" content="${ogLocale}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${esc(title)}"><meta name="twitter:description" content="${esc(description)}">
 <meta name="twitter:image" content="${esc(img)}">
@@ -99,7 +101,7 @@ ${headExtra}
 <footer class="site"><div class="wrap">
 <span>© ${new Date().getFullYear()} VOXEN</span>
 <a href="https://voxen.io">voxen.io</a><a href="https://hompy.voxen.io">hompy</a>
-<a class="sp" href="/feed.xml">RSS</a><a href="/sitemap.xml">사이트맵</a>
+<a class="sp" href="/feed.xml">RSS</a><a href="/sitemap.xml">Sitemap</a>
 </div></footer>
 </body></html>`;
 }
@@ -124,7 +126,7 @@ function renderPost(p) {
     mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
     image: abs(p.cover || cfg.defaultOgImage), inLanguage: cfg.lang,
   }];
-  const crumbItems = [{ name: "홈", item: cfg.base + "/" }];
+  const crumbItems = [{ name: "Home", item: cfg.base + "/" }];
   if (app) crumbItems.push({ name: app.name, item: abs(`/apps/${app.slug}/`) });
   crumbItems.push({ name: p.title, item: canonical });
   ld.push({
@@ -133,19 +135,22 @@ function renderPost(p) {
   });
   const headExtra = ld.map((o) => `<script type="application/ld+json">${JSON.stringify(o)}</script>`).join("");
   const related = p.app ? posts.filter((q) => q.app === p.app && q.slug !== p.slug).slice(0, 3) : [];
+  const ctaLink = app ? (app.links?.android || app.links?.ios || "#") : "#";
+  const ctaHtml = app ? `<div class="cta"><span class="cta-label">${esc(app.tagline || app.name)}</span><a class="cta-btn" href="${esc(ctaLink)}" target="_blank" rel="noopener">${esc(app.name)} ${p.lang === "en" ? "Get it →" : "받기 →"}</a></div>` : "";
+  const contentHtml = p.html.replace(/\{\{\s*cta\s*\}\}/g, ctaHtml);
   const body = `<article class="post">
-<p class="crumb"><a href="/">홈</a>${app ? ` · <a href="/apps/${app.slug}/">${esc(app.name)}</a>` : ""}</p>
+<p class="crumb"><a href="/">Home</a>${app ? ` · <a href="/apps/${app.slug}/">${esc(app.name)}</a>` : ""}</p>
 <div class="meta">${app ? `<span class="tag">${esc(app.name)}</span>` : ""}<span>${fmtDate(p.date)}</span>${p.tags.map((t) => `<span>#${esc(t)}</span>`).join("")}</div>
 <h1>${esc(p.title)}</h1>
 ${p.description ? `<p class="lede">${esc(p.description)}</p>` : ""}
-<div class="content">${p.html}</div>
+<div class="content">${contentHtml}</div>
 ${app ? `<aside class="appbox"><div class="meta"><span class="tag">${esc(app.type || "앱")}</span><span>${esc(app.status || "")}</span></div>
 <h3>${esc(app.name)}</h3><p>${esc(app.summary || app.tagline || "")}</p></aside>` : ""}
-${related.length ? `<div class="appbox"><div class="meta"><span>이어 보기</span></div>${related.map(postCard).join("")}</div>` : ""}
+${related.length ? `<div class="appbox"><div class="meta"><span>Read next</span></div>${related.map(postCard).join("")}</div>` : ""}
 </article>`;
   write(`${p.slug}/index.html`, layout({
     title: `${p.title} — ${cfg.brand}`, description: p.description || cfg.description,
-    canonical, headExtra, body, ogType: "article", ogImage: p.cover || cfg.defaultOgImage,
+    canonical, headExtra, body, ogType: "article", ogImage: p.cover || cfg.defaultOgImage, lang: p.lang,
   }));
 }
 
@@ -158,7 +163,7 @@ function renderHome() {
 <p>${esc(cfg.description)}</p>
 ${chips ? `<div class="chips">${chips}</div>` : ""}
 </section>
-<section class="list">${posts.length ? posts.map(postCard).join("") : `<p class="empty">첫 글을 준비 중입니다.</p>`}</section>`;
+<section class="list">${posts.length ? posts.map(postCard).join("") : `<p class="empty">First post coming soon.</p>`}</section>`;
   const ld = {
     "@context": "https://schema.org", "@type": "Blog", name: cfg.brand, url: cfg.base + "/",
     description: cfg.description, inLanguage: cfg.lang,
@@ -179,13 +184,13 @@ function renderAppArchive(app) {
 <h1>${esc(app.name)}</h1>
 <p>${esc(app.summary || app.tagline || "")}</p>
 </section>
-<section class="list"><p class="crumb"><a href="/">홈</a> · ${esc(app.name)} 글 ${list.length}개</p>${list.map(postCard).join("")}</section>`;
+<section class="list"><p class="crumb"><a href="/">Home</a> · ${esc(app.name)} · ${list.length} ${list.length === 1 ? "post" : "posts"}</p>${list.map(postCard).join("")}</section>`;
   const ld = {
-    "@context": "https://schema.org", "@type": "CollectionPage", name: `${app.name} — 개발 블로그`,
+    "@context": "https://schema.org", "@type": "CollectionPage", name: `${app.name} — Devlog`,
     url: canonical, description: app.summary || app.tagline || "", inLanguage: cfg.lang,
   };
   write(`apps/${app.slug}/index.html`, layout({
-    title: `${app.name} 개발 블로그 — ${cfg.brand}`, description: app.summary || app.tagline || cfg.description,
+    title: `${app.name} Devlog — ${cfg.brand}`, description: app.summary || app.tagline || cfg.description,
     canonical, headExtra: `<script type="application/ld+json">${JSON.stringify(ld)}</script>`, body,
   }));
 }
@@ -225,9 +230,9 @@ ${items}
 
 function render404() {
   write("404.html", layout({
-    title: `페이지를 찾을 수 없습니다 — ${cfg.brand}`, description: cfg.description, canonical: cfg.base + "/404.html",
+    title: `Page not found — ${cfg.brand}`, description: cfg.description, canonical: cfg.base + "/404.html",
     headExtra: `<meta name="robots" content="noindex">`,
-    body: `<section class="hero"><p class="eyebrow">404</p><h1>페이지를 찾을 수 없습니다.</h1><p><a class="chip" href="/">홈으로</a></p></section>`,
+    body: `<section class="hero"><p class="eyebrow">404</p><h1>Page not found.</h1><p><a class="chip" href="/">Back to home</a></p></section>`,
   }));
 }
 
