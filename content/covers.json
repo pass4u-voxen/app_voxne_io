@@ -8,15 +8,6 @@
     "photographerUrl": "https://unsplash.com/@4dgraphic?utm_source=voxen_dev_blog&utm_medium=referral",
     "unsplashUrl": "https://unsplash.com/photos/person-sitting-and-writing-don-9N68zG9o9IY?utm_source=voxen_dev_blog&utm_medium=referral"
   },
-  "cover-pipeline-test": {
-    "query": "lighthouse sunset coast",
-    "id": "Nhs0sLAn1Is",
-    "raw": "https://images.unsplash.com/photo-1522679056866-8dbbc8774a9d",
-    "alt": "The Walton Lighthouse on a rocky breakwater during the golden hour",
-    "photographer": "Paulius Dragunas",
-    "photographerUrl": "https://unsplash.com/@paulius005?utm_source=voxen_dev_blog&utm_medium=referral",
-    "unsplashUrl": "https://unsplash.com/photos/walton-lighthouse-on-rocky-breakwater-Nhs0sLAn1Is?utm_source=voxen_dev_blog&utm_medium=referral"
-  },
   "how-to-deal-with-wanderlust": {
     "query": "world map passport travel planning",
     "id": "nomAp6_KVXU",
