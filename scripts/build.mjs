@@ -145,7 +145,7 @@ function renderPost(p) {
   const headExtra = ld.map((o) => `<script type="application/ld+json">${JSON.stringify(o)}</script>`).join("");
   const related = p.app ? posts.filter((q) => q.app === p.app && q.slug !== p.slug).slice(0, 3) : [];
   const storeBadges = app ? [
-    app.links?.android && `<a class="badge" href="${esc(app.links.android)}" target="_blank" rel="noopener" aria-label="Get ${esc(app.name)} on Google Play"><img src="/assets/badges/google-play.png" alt="Get it on Google Play" height="40" width="103" loading="lazy"></a>`,
+    app.links?.android && `<a class="badge" href="${esc(app.links.android)}" target="_blank" rel="noopener" aria-label="Get ${esc(app.name)} on Google Play"><img src="/assets/badges/google-play.png" alt="Get it on Google Play" height="40" width="134" loading="lazy"></a>`,
     app.links?.ios && `<a class="badge" href="${esc(app.links.ios)}" target="_blank" rel="noopener" aria-label="Download ${esc(app.name)} on the App Store"><img src="/assets/badges/app-store.svg" alt="Download on the App Store" height="40" width="120" loading="lazy"></a>`,
   ].filter(Boolean).join("") : "";
   const iconHtml = app?.icon ? `<img class="cta-icon" src="${esc(app.icon)}" alt="" width="56" height="56" loading="lazy">` : "";
