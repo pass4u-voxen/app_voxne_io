@@ -165,7 +165,7 @@ function renderPost(p) {
     app.links?.ios && `<a class="badge" href="${esc(app.links.ios)}" target="_blank" rel="noopener" aria-label="Download ${esc(app.name)} on the App Store"><img src="/assets/badges/app-store.svg" alt="Download on the App Store" height="40" width="120" loading="lazy"></a>`,
   ].filter(Boolean).join("") : "";
   const iconHtml = app?.icon ? `<img class="cta-icon" src="${esc(app.icon)}" alt="" width="56" height="56" loading="lazy">` : "";
-  const bannerHtml = app ? `<aside class="cta" aria-label="${esc(app.name)} advertisement"><span class="cta-ad">Ad</span>${iconHtml}<div class="cta-body"><strong class="cta-name">${esc(app.name)}</strong><span class="cta-label">${esc(app.tagline || "")}</span></div><div class="cta-stores">${storeBadges}</div></aside>` : "";
+  const bannerHtml = app ? `<aside class="cta">${iconHtml}<div class="cta-body"><strong class="cta-name">${esc(app.name)}</strong><span class="cta-label">${esc(app.tagline || "")}</span></div><div class="cta-stores">${storeBadges}</div></aside>` : "";
   // Banners are inserted by the build, never by the writer: one at the section break
   // nearest the middle of the article, one after the last paragraph.
   const contentHtml = insertMidBanner(p.html.replace(/\{\{\s*cta\s*\}\}\s*/g, ""), bannerHtml);
