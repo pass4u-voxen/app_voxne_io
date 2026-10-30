@@ -13,7 +13,7 @@ Everything you need is in this repo: pick a keyword from `content/keywords/seed.
 - **Never name our app, never say "we built", never pitch.** No "that's why we made…", no feature lists, no store links, no download prompts.
 - **Write about the thing itself.** For "coloring games for kids" write about children's psychology and what coloring does for a child — not about which coloring app to download. For "how to deal with wanderlust" write about the longing and what actually helps. For "learn Korean by writing" teach how to write Korean.
 - **Indirect is the maximum.** It's fine (and good) for the article to make the reader *think* that the kind of thing our app does might help — e.g. mentioning that handwriting practice sticks better than flashcards, that coloring a favorite character holds a child's attention, that a slow hands‑on activity beats scrolling. Describe the activity in generic terms ("a handwriting app with stroke‑order animations", "a coloring app with city scenes"), never as *our* app.
-- **The build shows the ads.** The app's banner (icon, name, tagline, store badges) is inserted automatically twice: once at the section break nearest the middle of the article and once at the end. You don't write them, and you don't write `{{cta}}`. The `app` field in the frontmatter decides which app's banner appears, so pick the app whose banner fits the topic.
+- **The build shows the ads.** The app's banner (icon, name, tagline, store badges, three screenshots) is inserted automatically twice: once at the section break nearest the middle of the article and once at the end. You don't write them, and you don't write `{{cta}}`. The `app` field in the frontmatter decides which app's banner appears, so pick the app whose banner fits the topic.
 
 ---
 

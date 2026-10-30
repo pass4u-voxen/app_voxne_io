@@ -17,7 +17,12 @@
         "android": "https://play.google.com/store/apps/details?id=io.voxen.paintrip",
         "ios": "https://apps.apple.com/app/paintrip-watercolor-travel/id6821364106"
       },
-      "icon": "/assets/icons/paintrip.png"
+      "icon": "/assets/icons/paintrip.png",
+      "screens": [
+        "/assets/screens/paintrip/1.jpg",
+        "/assets/screens/paintrip/2.jpg",
+        "/assets/screens/paintrip/3.jpg"
+      ]
     },
     {
       "slug": "brawlcoloring",
@@ -34,7 +39,12 @@
       "links": {
         "android": "https://play.google.com/store/apps/details?id=air.com.voxen.BSCB"
       },
-      "icon": "/assets/icons/brawlcoloring.png"
+      "icon": "/assets/icons/brawlcoloring.png",
+      "screens": [
+        "/assets/screens/brawlcoloring/1.jpg",
+        "/assets/screens/brawlcoloring/2.jpg",
+        "/assets/screens/brawlcoloring/3.jpg"
+      ]
     },
     {
       "slug": "everyday_japanese",
@@ -51,7 +61,12 @@
       "links": {
         "android": "https://play.google.com/store/apps/details?id=com.voxen.everyday_japanese"
       },
-      "icon": "/assets/icons/everyday_japanese.png"
+      "icon": "/assets/icons/everyday_japanese.png",
+      "screens": [
+        "/assets/screens/everyday_japanese/1.jpg",
+        "/assets/screens/everyday_japanese/2.jpg",
+        "/assets/screens/everyday_japanese/3.jpg"
+      ]
     },
     {
       "slug": "daily_hangul",
@@ -70,7 +85,12 @@
         "android": "https://play.google.com/store/apps/details?id=com.voxen.daily_hangul",
         "ios": "https://apps.apple.com/app/daily-writing-hangul/id6768184973"
       },
-      "icon": "/assets/icons/daily_hangul.png"
+      "icon": "/assets/icons/daily_hangul.png",
+      "screens": [
+        "/assets/screens/daily_hangul/1.jpg",
+        "/assets/screens/daily_hangul/2.jpg",
+        "/assets/screens/daily_hangul/3.jpg"
+      ]
     }
   ]
 }
