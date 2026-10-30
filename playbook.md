@@ -111,4 +111,8 @@ If unsure, default to publishing; these two niches are the only ones that benefi
 
 ## Phase 2 (later) — real opportunity keywords from Search Console
 
-The seed queue covers the first weeks. Once app.voxen.io has Search Console data, a separate script will drop a file `content/keywords/opportunities.json` (high‑impression + low‑CTR + rank 5–30 queries pulled from GSC). When that file exists, **prefer it over `seed.json`** — those are proven real opportunities. Until then, use the seed queue.
+The seed queue covers the first weeks. Every day at 17:00 KST a GitHub Action refreshes `content/keywords/opportunities.json` from Search Console. When its `opportunities` list is non‑empty, **prefer it over `seed.json`** — those are proven real searches. Three types:
+- `gap` — the query gets impressions but zero clicks, ranking beyond page 3. Nobody has answered it yet: write a dedicated article that answers that exact query (this is the main play).
+- `rank_push` — ranks 10–30. If an existing post already targets it, improve that post instead of writing a new one; otherwise write a dedicated article.
+- `ctr_fix` — top 10 but CTR < 2%: rewrite that page's title and description. Not a new post.
+Pick the highest‑impression `gap`/`rank_push` whose intent isn't already covered, and still rotate apps.

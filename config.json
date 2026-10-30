@@ -9,5 +9,7 @@
   "googleSiteVerification": "pezWASMMeA4_8MVjSSsFTzjfIHlpl-JUZ4q7fs5dx5o",
   "defaultOgImage": "/assets/og-default.svg",
   "accent": "#7c5cff",
-  "postsPerFeed": 20
+  "postsPerFeed": 20,
+  "posthogKey": "",
+  "posthogHost": "https://us.i.posthog.com"
 }

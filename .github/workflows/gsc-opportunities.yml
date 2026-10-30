@@ -2,7 +2,7 @@ name: GSC opportunity keywords
 
 on:
   schedule:
-    - cron: '0 0 * * 1'   # 매주 월요일 00:00 UTC (09:00 KST)
+    - cron: '0 8 * * *'   # 매일 08:00 UTC (17:00 KST) — 18:00 KST 글쓰기 루틴 1시간 전
   workflow_dispatch:
 
 permissions:

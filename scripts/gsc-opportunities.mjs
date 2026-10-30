@@ -59,6 +59,7 @@ const ymd = (d) => d.toISOString().slice(0, 10);
   const classify = (o) => {
     if (o.position <= 10 && o.ctr < CTR_MAX) return "ctr_fix";        // 상위권인데 CTR 낮음 → 제목·메타 개선
     if (o.position > 10 && o.position <= 30) return "rank_push";      // 2~3페이지 → 개선 또는 전용 글
+    if (o.position > 30 && o.clicks === 0) return "gap";              // 노출만 쌓이고 클릭 0 (순위 무관) → 전용 글 (Vaultaire 방식)
     return null;
   };
 
@@ -78,7 +79,7 @@ const ymd = (d) => d.toISOString().slice(0, 10);
     generatedAt: new Date().toISOString(),
     site: SITE,
     dateRange: { start: ymd(start), end: ymd(end) },
-    note: "GSC 기회검색어. ctr_fix=상위10위인데 CTR<2% → 해당 page의 제목·메타 다시 쓰기. rank_push=2~3페이지(순위 10~30) → 개선 또는 전용 글. 비어있지 않으면 seed.json보다 우선.",
+    note: "GSC 기회검색어. ctr_fix=상위10위인데 CTR<2% → 해당 page의 제목·메타 다시 쓰기. rank_push=2~3페이지(순위 10~30) → 개선 또는 전용 글. gap=30위 밖에서 노출만 쌓이고 클릭 0 → 그 검색어를 정면으로 답하는 전용 글. 비어있지 않으면 seed.json보다 우선.",
     thresholds: { minImpressions: MIN_IMPR, ctrMaxPct: CTR_MAX },
     count: opps.length,
     opportunities: opps,

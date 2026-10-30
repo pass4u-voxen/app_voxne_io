@@ -79,6 +79,14 @@ if (new Set(posts.map((p) => p.slug)).size !== posts.length)
   throw new Error("중복 슬러그가 있습니다. 파일명/슬러그를 확인하세요.");
 
 // ---------- layout ----------
+// PostHog (free tier) — only injected when config.posthogKey is set. Pageviews are auto-captured;
+// store badge clicks are sent as `store_click` {app, store, slug, placement} so the web→store funnel is measurable.
+const analyticsHtml = cfg.posthogKey ? `<script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init(${JSON.stringify(cfg.posthogKey)},{api_host:${JSON.stringify(cfg.posthogHost || "https://us.i.posthog.com")},person_profiles:"identified_only",capture_pageview:true,capture_pageleave:true,autocapture:false});
+document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a.badge[data-app]");if(a&&window.posthog)posthog.capture("store_click",{app:a.dataset.app,store:a.dataset.store,slug:a.dataset.slug,placement:a.dataset.placement,href:a.href});});
+</script>` : "";
+
 function layout({ title, description, canonical, headExtra = "", body, ogType = "website", ogImage, lang = cfg.lang }) {
   const img = abs(ogImage || cfg.defaultOgImage);
   const ogLocale = lang === "en" ? "en_US" : "ko_KR";
@@ -100,6 +108,7 @@ function layout({ title, description, canonical, headExtra = "", body, ogType = 
 <link rel="alternate" type="application/rss+xml" title="${esc(cfg.brand)} RSS" href="/feed.xml">
 <link rel="stylesheet" href="/assets/style.css">
 ${headExtra}
+${analyticsHtml}
 </head><body>
 <header class="site"><div class="wrap">
 <a class="brand" href="/"><span class="dot"></span>VOXEN <b>DEV</b></a>
@@ -161,22 +170,22 @@ function renderPost(p) {
   const headExtra = ld.map((o) => `<script type="application/ld+json">${JSON.stringify(o)}</script>`).join("");
   const related = p.app ? posts.filter((q) => q.app === p.app && q.slug !== p.slug).slice(0, 3) : [];
   const storeBadges = app ? [
-    app.links?.android && `<a class="badge" href="${esc(app.links.android)}" target="_blank" rel="noopener" aria-label="Get ${esc(app.name)} on Google Play"><img src="/assets/badges/google-play.png" alt="Get it on Google Play" height="40" width="134" loading="lazy"></a>`,
-    app.links?.ios && `<a class="badge" href="${esc(app.links.ios)}" target="_blank" rel="noopener" aria-label="Download ${esc(app.name)} on the App Store"><img src="/assets/badges/app-store.svg" alt="Download on the App Store" height="40" width="120" loading="lazy"></a>`,
+    app.links?.android && `<a class="badge" data-app="${esc(app.slug)}" data-store="google_play" data-slug="${esc(p.slug)}" data-placement="PLACEMENT" href="${esc(app.links.android)}" target="_blank" rel="noopener" aria-label="Get ${esc(app.name)} on Google Play"><img src="/assets/badges/google-play.png" alt="Get it on Google Play" height="40" width="134" loading="lazy"></a>`,
+    app.links?.ios && `<a class="badge" data-app="${esc(app.slug)}" data-store="app_store" data-slug="${esc(p.slug)}" data-placement="PLACEMENT" href="${esc(app.links.ios)}" target="_blank" rel="noopener" aria-label="Download ${esc(app.name)} on the App Store"><img src="/assets/badges/app-store.svg" alt="Download on the App Store" height="40" width="120" loading="lazy"></a>`,
   ].filter(Boolean).join("") : "";
   const iconHtml = app?.icon ? `<img class="cta-icon" src="${esc(app.icon)}" alt="" width="64" height="64" loading="lazy">` : "";
   const shotsHtml = app?.screens?.length ? `<div class="cta-shots">${app.screens.map((src) => `<img src="${esc(src)}" alt="${esc(app.name)} screenshot" height="600" loading="lazy">`).join("")}</div>` : "";
   const bannerHtml = app ? `<aside class="cta"${app.accent ? ` style="--app-accent:${esc(app.accent)}"` : ""}><div class="cta-main">${iconHtml}<div class="cta-body"><strong class="cta-name">${esc(app.name)}</strong><span class="cta-label">${esc(app.tagline || "")}</span></div><div class="cta-stores">${storeBadges}</div></div>${shotsHtml}</aside>` : "";
   // Banners are inserted by the build, never by the writer: one at the section break
   // nearest the middle of the article, one after the last paragraph.
-  const contentHtml = insertMidBanner(p.html.replace(/\{\{\s*cta\s*\}\}\s*/g, ""), bannerHtml);
+  const contentHtml = insertMidBanner(p.html.replace(/\{\{\s*cta\s*\}\}\s*/g, ""), bannerHtml.replace(/PLACEMENT/g, "mid"));
   const body = `<article class="post">
 <p class="crumb"><a href="/">Home</a>${app ? ` · <a href="/apps/${app.slug}/">${esc(app.name)}</a>` : ""}</p>
 <div class="meta">${app ? `<span class="tag">${esc(app.name)}</span>` : ""}<span>${fmtDate(p.date)}</span>${p.tags.map((t) => `<span>#${esc(t)}</span>`).join("")}</div>
 <h1>${esc(p.title)}</h1>
 ${p.description ? `<p class="lede">${esc(p.description)}</p>` : ""}
 ${p.cover ? `<figure class="cover"><img src="${esc(p.cover)}" alt="${esc(p.coverAlt)}" width="1200" height="675">${p.credit ? `<figcaption>Photo by <a href="${esc(p.credit.photographerUrl)}" target="_blank" rel="noopener">${esc(p.credit.photographer)}</a> on <a href="${esc(p.credit.unsplashUrl)}" target="_blank" rel="noopener">Unsplash</a></figcaption>` : ""}</figure>` : ""}
-<div class="content">${contentHtml}${bannerHtml}</div>
+<div class="content">${contentHtml}${bannerHtml.replace(/PLACEMENT/g, "end")}</div>
 ${related.length ? `<div class="appbox"><div class="meta"><span>Read next</span></div>${related.map(postCard).join("")}</div>` : ""}
 </article>`;
   write(`${p.slug}/index.html`, layout({
