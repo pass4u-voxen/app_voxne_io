@@ -38,7 +38,7 @@ draft: false
 ---
 ```
 
-- `coverQuery` → the build searches Unsplash for this phrase and pins a landscape photo as the post's cover + OG image (`content/covers.json`). Leave `cover:` empty. Write a **concrete, visual scene** ("fountain pen notebook handwriting", "city street cafe evening"), not an abstract concept ("relaxation", "learning"). Never use a brand, game, or character name (brawlcoloring → "kids coloring crayons table"). One photo per post; don't reuse another post's query.
+- `coverQuery` → the build searches Unsplash for this phrase and pins a landscape photo as the post's cover + OG image (`content/covers.json`). Leave `cover:` empty. Write a **concrete, visual scene** ("fountain pen notebook handwriting", "city street cafe evening"), not an abstract concept ("relaxation", "learning"). Never use a brand, game, or character name (brawlcoloring → "kids coloring crayons table"). One photo per post; don't reuse another post's query. For Korean/Japanese posts, Unsplash returns Chinese calligraphy for "calligraphy" / "asian writing" / "korean handwriting" — use `hangul` or `hiragana` directly, or a script-neutral scene ("fountain pen notebook", "study desk pen").
 - `draft: true` → written but **not** published (use when a human should review first — see "When to use draft").
 - `app` must match a `slug` in `content/apps.json`. The build auto‑adds that app's CTA button and info box, so you don't hand‑write store links.
 

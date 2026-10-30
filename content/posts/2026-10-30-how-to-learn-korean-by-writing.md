@@ -7,7 +7,7 @@ updated: 2026-10-30
 tags: [Learn Korean, Hangul, Handwriting]
 description: "Wondering how to learn Korean by writing? Use this 15-minute Hangul routine to build syllable blocks, recall letters, and practice words."
 cover:
-coverQuery: korean alphabet practice notebook
+coverQuery: hangul
 lang: en
 draft: false
 ---
