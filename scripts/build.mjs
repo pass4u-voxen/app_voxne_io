@@ -123,6 +123,22 @@ ${p.thumb ? `<img class="thumb" src="${esc(p.thumb)}" alt="${esc(p.coverAlt)}" w
 <h2>${esc(p.title)}</h2>${p.description ? `<p>${esc(p.description)}</p>` : ""}</a>`;
 }
 
+// Insert `banner` at the top-level block boundary closest to the middle of `html`:
+// before an <h2> if the article has sections, otherwise after a </p>.
+function insertMidBanner(html, banner) {
+  if (!banner) return html;
+  const mid = html.length / 2;
+  const candidates = [];
+  for (const m of html.matchAll(/<h2[\s>]/g)) candidates.push(m.index);
+  if (candidates.length < 2) {
+    candidates.length = 0;
+    for (const m of html.matchAll(/<\/p>\s*\n/g)) candidates.push(m.index + m[0].length);
+  }
+  if (!candidates.length) return html;
+  const at = candidates.reduce((a, b) => (Math.abs(b - mid) < Math.abs(a - mid) ? b : a));
+  return html.slice(0, at) + banner + "\n" + html.slice(at);
+}
+
 // ---------- pages ----------
 function renderPost(p) {
   const app = p.app && appBySlug[p.app];
@@ -149,17 +165,17 @@ function renderPost(p) {
     app.links?.ios && `<a class="badge" href="${esc(app.links.ios)}" target="_blank" rel="noopener" aria-label="Download ${esc(app.name)} on the App Store"><img src="/assets/badges/app-store.svg" alt="Download on the App Store" height="40" width="120" loading="lazy"></a>`,
   ].filter(Boolean).join("") : "";
   const iconHtml = app?.icon ? `<img class="cta-icon" src="${esc(app.icon)}" alt="" width="56" height="56" loading="lazy">` : "";
-  const ctaHtml = app ? `<div class="cta">${iconHtml}<div class="cta-body"><strong class="cta-name">${esc(app.name)}</strong><span class="cta-label">${esc(app.tagline || "")}</span></div><div class="cta-stores">${storeBadges}</div></div>` : "";
-  const contentHtml = p.html.replace(/\{\{\s*cta\s*\}\}/g, ctaHtml);
+  const bannerHtml = app ? `<aside class="cta" aria-label="${esc(app.name)} advertisement"><span class="cta-ad">Ad</span>${iconHtml}<div class="cta-body"><strong class="cta-name">${esc(app.name)}</strong><span class="cta-label">${esc(app.tagline || "")}</span></div><div class="cta-stores">${storeBadges}</div></aside>` : "";
+  // Banners are inserted by the build, never by the writer: one at the section break
+  // nearest the middle of the article, one after the last paragraph.
+  const contentHtml = insertMidBanner(p.html.replace(/\{\{\s*cta\s*\}\}\s*/g, ""), bannerHtml);
   const body = `<article class="post">
 <p class="crumb"><a href="/">Home</a>${app ? ` · <a href="/apps/${app.slug}/">${esc(app.name)}</a>` : ""}</p>
 <div class="meta">${app ? `<span class="tag">${esc(app.name)}</span>` : ""}<span>${fmtDate(p.date)}</span>${p.tags.map((t) => `<span>#${esc(t)}</span>`).join("")}</div>
 <h1>${esc(p.title)}</h1>
 ${p.description ? `<p class="lede">${esc(p.description)}</p>` : ""}
 ${p.cover ? `<figure class="cover"><img src="${esc(p.cover)}" alt="${esc(p.coverAlt)}" width="1200" height="675">${p.credit ? `<figcaption>Photo by <a href="${esc(p.credit.photographerUrl)}" target="_blank" rel="noopener">${esc(p.credit.photographer)}</a> on <a href="${esc(p.credit.unsplashUrl)}" target="_blank" rel="noopener">Unsplash</a></figcaption>` : ""}</figure>` : ""}
-<div class="content">${contentHtml}</div>
-${app ? `<aside class="appbox"><div class="meta"><span class="tag">${esc(app.type || "앱")}</span><span>${esc(app.status || "")}</span></div>
-<h3>${esc(app.name)}</h3><p>${esc(app.summary || app.tagline || "")}</p></aside>` : ""}
+<div class="content">${contentHtml}${bannerHtml}</div>
 ${related.length ? `<div class="appbox"><div class="meta"><span>Read next</span></div>${related.map(postCard).join("")}</div>` : ""}
 </article>`;
   write(`${p.slug}/index.html`, layout({

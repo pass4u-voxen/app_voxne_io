@@ -80,9 +80,7 @@ Travelers keep journals and collect stamps for a reason: looking back at where y
 
 The method above is simple. The friction is that on an ordinary weeknight, the feed is one tap away and the twenty-minute ritual takes a little setup. That gap is where most good intentions quietly die.
 
-We built **Paintrip** to close that gap. It's a watercolor coloring app where you "travel" by painting cities: Paris, Kyoto, Istanbul, Santorini, New York and more, nineteen so far with new ones arriving. You fill a scene piece by piece and watch the color bloom like paint on wet paper until the last piece reveals a finished travel painting. One city is free to paint every day, calm music from each country plays while you work, and once you finish all ten paintings of a city it gets pinned on your world map with its own dated passport stamp. It isn't a replacement for standing in that street yourself. It's a way to spend twenty absorbed minutes somewhere else, on the nights when that's exactly what the wanderlust is asking for.
-
-{{cta}}
+The fix is to make the ritual as easy to start as the feed. Keep the playlist saved. Keep the drink in the cupboard. Keep one slow, hands-on thing ready to pick up without thinking: a novel set in the city on your nightstand, a sketchbook, or a coloring app with scenes of the places you want to see. If "elsewhere" is one tap away, it will win on more nights than you'd expect.
 
 ## Start tonight with one city
 

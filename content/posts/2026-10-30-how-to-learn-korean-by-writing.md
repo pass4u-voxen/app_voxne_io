@@ -111,8 +111,6 @@ You can do this on paper, on a tablet, or on a phone that supports handwriting. 
 
 The tricky part is often not understanding Hangul. It's remembering which letters to review, finding a stroke-order reference, and actually picking up a pen or opening a writing canvas the next day.
 
-**Daily Writing Hangul** is built around short Korean handwriting lessons. Its store listings describe stroke-order animations, pronunciation audio, tracing on a writing canvas, and daily word practice. Those features can help you keep the **look → write → recall** routine in one place; you still need to do the recall yourself rather than relying only on tracing.
-
-{{cta}}
+Whatever you use, keep three things within reach: a reliable stroke-order reference, a surface to write on, and a note of what to review tomorrow. Some learners keep a paper notebook and a chart. Others prefer a handwriting app with stroke-order animations, pronunciation audio and a writing canvas, so the whole **look → write → recall** loop lives in one place. The format matters less than making the recall step something you can't skip.
 
 Start today with **ㄱ, ㄴ, ㅇ, ㅏ, ㅗ**. Write them, hide them, then build **가, 나, 아, 고**. Tomorrow, begin by seeing which ones you can produce without looking. That's a practical first step toward reading and writing Korean—one small block at a time.

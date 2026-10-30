@@ -42,8 +42,6 @@ Writing takes more effort than looking — and that effort is precisely why it l
 
 The method is simple — it's the **consistency** that's hard. Grabbing paper and a pen, looking up stroke order, remembering to cover and recall — doing all of that alone, every day, is where most people quit and drift back to passive flashcard apps.
 
-We ran into the same problem, so we built an app for it. There are plenty of apps for memorizing words or listening, but almost none for **learning by writing**. So we made one that takes you from hiragana stroke order to cover-and-recall practice, in a daily-sized chunk.
-
-{{cta}}
+Lower the setup cost until it is almost zero. Keep a stroke-order chart and a notebook on the nightstand, or use a handwriting app that already has stroke-order animations and a writing canvas, so cover-and-recall practice is one tap away instead of a small project. Whatever you pick, the rule is the same: the app or the notebook is only there to make the writing happen. The remembering still comes from your hand.
 
 You don't need a grand start. Today, just write five hiragana — out loud, by hand. Tomorrow, cover them and see how many stuck. You'll feel the difference from "just looking" right away.

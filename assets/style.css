@@ -93,7 +93,8 @@ footer.site .sp{margin-left:auto}
 .empty{color:var(--muted);padding:40px 0}
 
 /* inline app CTA */
-.cta{margin:32px 0;padding:18px 20px;border:1px solid var(--accent);border-radius:var(--radius);background:linear-gradient(180deg,rgba(124,92,255,.12),rgba(124,92,255,.02));display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.cta{position:relative;margin:32px 0;padding:18px 20px;border:1px solid var(--accent);border-radius:var(--radius);background:linear-gradient(180deg,rgba(124,92,255,.12),rgba(124,92,255,.02));display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.cta-ad{position:absolute;top:6px;right:10px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);opacity:.7}
 .cta-icon{width:56px;height:56px;border-radius:14px;flex-shrink:0;box-shadow:0 4px 14px rgba(0,0,0,.35)}
 .cta-body{display:flex;flex-direction:column;gap:2px;flex:1;min-width:160px}
 .cta-name{font-size:16px;font-weight:800}
