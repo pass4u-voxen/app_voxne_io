@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-29T14:00:05.230Z",
+  "generatedAt": "2026-10-31T14:22:40.311Z",
   "site": "https://app.voxen.io/",
   "dateRange": {
-    "start": "2026-09-29",
-    "end": "2026-10-27"
+    "start": "2026-10-01",
+    "end": "2026-10-29"
   },
-  "note": "GSC 기회검색어. ctr_fix=상위10위인데 CTR<2% → 해당 page의 제목·메타 다시 쓰기. rank_push=2~3페이지(순위 10~30) → 개선 또는 전용 글. 비어있지 않으면 seed.json보다 우선.",
+  "note": "GSC 기회검색어. ctr_fix=상위10위인데 CTR<2% → 해당 page의 제목·메타 다시 쓰기. rank_push=2~3페이지(순위 10~30) → 개선 또는 전용 글. gap=30위 밖에서 노출만 쌓이고 클릭 0 → 그 검색어를 정면으로 답하는 전용 글. 비어있지 않으면 seed.json보다 우선.",
   "thresholds": {
     "minImpressions": 20,
     "ctrMaxPct": 2
