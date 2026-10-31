@@ -11,5 +11,6 @@
   "accent": "#7c5cff",
   "postsPerFeed": 20,
   "posthogKey": "",
-  "posthogHost": "https://us.i.posthog.com"
+  "posthogHost": "https://us.i.posthog.com",
+  "gaMeasurementId": ""
 }

@@ -87,6 +87,14 @@ posthog.init(${JSON.stringify(cfg.posthogKey)},{api_host:${JSON.stringify(cfg.po
 document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a.badge[data-app]");if(a&&window.posthog)posthog.capture("store_click",{app:a.dataset.app,store:a.dataset.store,slug:a.dataset.slug,placement:a.dataset.placement,href:a.href});});
 </script>` : "";
 
+// Google Analytics 4 — only injected when config.gaMeasurementId (G-XXXXXXXXXX) is set. Pageviews are auto-sent;
+// store badge clicks are sent as the custom event `store_click` with the same {app, store, slug, placement} params.
+const gaHtml = cfg.gaMeasurementId ? `<script async src="https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(cfg.gaMeasurementId)}"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config",${JSON.stringify(cfg.gaMeasurementId)});
+document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a.badge[data-app]");if(a)gtag("event","store_click",{app:a.dataset.app,store:a.dataset.store,slug:a.dataset.slug,placement:a.dataset.placement,href:a.href});});
+</script>` : "";
+
 function layout({ title, description, canonical, headExtra = "", body, ogType = "website", ogImage, lang = cfg.lang }) {
   const img = abs(ogImage || cfg.defaultOgImage);
   const ogLocale = lang === "en" ? "en_US" : "ko_KR";
@@ -108,7 +116,7 @@ function layout({ title, description, canonical, headExtra = "", body, ogType = 
 <link rel="alternate" type="application/rss+xml" title="${esc(cfg.brand)} RSS" href="/feed.xml">
 <link rel="stylesheet" href="/assets/style.css">
 ${headExtra}
-${analyticsHtml}
+${analyticsHtml}${gaHtml}
 </head><body>
 <header class="site"><div class="wrap">
 <a class="brand" href="/"><span class="dot"></span>VOXEN <b>DEV</b></a>
