@@ -43,5 +43,14 @@
     "photographer": "Aaron Burden",
     "photographerUrl": "https://unsplash.com/@aaronburden?utm_source=voxen_dev_blog&utm_medium=referral",
     "unsplashUrl": "https://unsplash.com/photos/fountain-pen-on-spiral-book-xG8IQMqMITM?utm_source=voxen_dev_blog&utm_medium=referral"
+  },
+  "relaxing-games": {
+    "query": "cozy blanket tea lamp",
+    "id": "L4Ia_dBBPWo",
+    "raw": "https://images.unsplash.com/photo-1695755114252-a310bcca1886",
+    "alt": "a candle and a book on a chair",
+    "photographer": "Aspen Metzger",
+    "photographerUrl": "https://unsplash.com/@aspen_dianne?utm_source=voxen_dev_blog&utm_medium=referral",
+    "unsplashUrl": "https://unsplash.com/photos/a-candle-and-a-book-on-a-chair-L4Ia_dBBPWo?utm_source=voxen_dev_blog&utm_medium=referral"
   }
 }
