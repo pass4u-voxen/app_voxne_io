@@ -454,7 +454,7 @@
               "kw": "Hangul stroke order",
               "type": "info",
               "priority": 1,
-              "status": "queued",
+              "status": "used",
               "angle": "correct stroke order guide (accuracy critical)"
             },
             {
