@@ -330,7 +330,7 @@
               "kw": "hiragana stroke order",
               "type": "info",
               "priority": 1,
-              "status": "queued",
+              "status": "used",
               "angle": "correct stroke order (accuracy critical) + write-along"
             },
             {
