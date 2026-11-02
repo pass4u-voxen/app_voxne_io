@@ -35,6 +35,15 @@
     "photographerUrl": "https://unsplash.com/@enginakyurt?utm_source=voxen_dev_blog&utm_medium=referral",
     "unsplashUrl": "https://unsplash.com/photos/notebook-and-pen-on-white-IZj7vckPGiw?utm_source=voxen_dev_blog&utm_medium=referral"
   },
+  "hiragana-stroke-order": {
+    "query": "hiragana",
+    "id": "UyVbyimlAgE",
+    "raw": "https://images.unsplash.com/photo-1581855339095-0c282d58527b",
+    "alt": "white book page on black and white textile",
+    "photographer": "Hiroshi Tsubono",
+    "photographerUrl": "https://unsplash.com/@hiro7jp?utm_source=voxen_dev_blog&utm_medium=referral",
+    "unsplashUrl": "https://unsplash.com/photos/white-book-page-on-black-and-white-textile-UyVbyimlAgE?utm_source=voxen_dev_blog&utm_medium=referral"
+  },
   "how-to-deal-with-wanderlust": {
     "query": "world map passport travel planning",
     "id": "nomAp6_KVXU",
