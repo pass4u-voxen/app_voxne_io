@@ -80,6 +80,15 @@
     "photographerUrl": "https://unsplash.com/@aaronburden?utm_source=voxen_dev_blog&utm_medium=referral",
     "unsplashUrl": "https://unsplash.com/photos/fountain-pen-on-spiral-book-xG8IQMqMITM?utm_source=voxen_dev_blog&utm_medium=referral"
   },
+  "japanese-writing-practice-app": {
+    "query": "pencil notebook japanese study",
+    "id": "_jOjRTodMFk",
+    "raw": "https://images.unsplash.com/photo-1787892383964-c8bf84e1e315",
+    "alt": "An open antique book with handwritten Japanese calligraphy on aged yellowed paper",
+    "photographer": "Dr. C.K. Huang",
+    "photographerUrl": "https://unsplash.com/@leventco?utm_source=voxen_dev_blog&utm_medium=referral",
+    "unsplashUrl": "https://unsplash.com/photos/antique-book-with-japanese-calligraphy-_jOjRTodMFk?utm_source=voxen_dev_blog&utm_medium=referral"
+  },
   "relaxing-games": {
     "query": "cozy blanket tea lamp",
     "id": "L4Ia_dBBPWo",
