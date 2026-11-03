@@ -296,7 +296,7 @@
               "kw": "Japanese writing practice app",
               "type": "transact",
               "priority": 1,
-              "status": "queued",
+              "status": "used",
               "angle": "vocab/listening apps exist, writing apps don't -> ours"
             },
             {
