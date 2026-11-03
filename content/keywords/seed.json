@@ -420,7 +420,7 @@
               "kw": "Korean handwriting practice app",
               "type": "transact",
               "priority": 1,
-              "status": "queued",
+              "status": "used",
               "angle": "vocab/phrase apps exist, writing apps don't -> ours"
             },
             {
