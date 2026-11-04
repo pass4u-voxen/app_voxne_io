@@ -26,6 +26,15 @@
     "photographerUrl": "https://unsplash.com/@4dgraphic?utm_source=voxen_dev_blog&utm_medium=referral",
     "unsplashUrl": "https://unsplash.com/photos/person-sitting-and-writing-don-9N68zG9o9IY?utm_source=voxen_dev_blog&utm_medium=referral"
   },
+  "free-coloring-app-for-kids": {
+    "query": "child tablet sofa",
+    "id": "tQPgM1k6EbQ",
+    "raw": "https://images.unsplash.com/photo-1495654794940-1c0cd2aeedc1",
+    "alt": "boy sitting on chair beside table using tablet computer",
+    "photographer": "Kelly Sikkema",
+    "photographerUrl": "https://unsplash.com/@kellysikkema?utm_source=voxen_dev_blog&utm_medium=referral",
+    "unsplashUrl": "https://unsplash.com/photos/boy-sitting-on-chair-beside-table-using-tablet-computer-tQPgM1k6EbQ?utm_source=voxen_dev_blog&utm_medium=referral"
+  },
   "hangul-stroke-order": {
     "query": "pencil square grid notebook",
     "id": "IZj7vckPGiw",
