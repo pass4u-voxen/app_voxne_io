@@ -344,7 +344,7 @@
               "kw": "katakana vs hiragana",
               "type": "info",
               "priority": 2,
-              "status": "queued",
+              "status": "used",
               "angle": "tell them apart + practice writing both"
             },
             {
