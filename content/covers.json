@@ -134,6 +134,15 @@
     "photographerUrl": "https://unsplash.com/@leventco?utm_source=voxen_dev_blog&utm_medium=referral",
     "unsplashUrl": "https://unsplash.com/photos/antique-book-with-japanese-calligraphy-_jOjRTodMFk?utm_source=voxen_dev_blog&utm_medium=referral"
   },
+  "katakana-vs-hiragana": {
+    "query": "tokyo street signs neon",
+    "id": "alY6_OpdwRQ",
+    "raw": "https://images.unsplash.com/photo-1542051841857-5f90071e7989",
+    "alt": "Cars driving through a neon-lit intersection in Shibuya, Tokyo, at night",
+    "photographer": "Jezael Melgoza",
+    "photographerUrl": "https://unsplash.com/@jezar?utm_source=voxen_dev_blog&utm_medium=referral",
+    "unsplashUrl": "https://unsplash.com/photos/cars-in-neon-shibuya-intersection-alY6_OpdwRQ?utm_source=voxen_dev_blog&utm_medium=referral"
+  },
   "korean-alphabet-for-beginners": {
     "query": "seoul street signs night",
     "id": "rHvBQyfLPjk",
