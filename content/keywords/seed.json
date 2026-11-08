@@ -70,7 +70,7 @@
               "kw": "games to play before bed",
               "type": "compare",
               "priority": 2,
-              "status": "queued",
+              "status": "used",
               "angle": "quiet games that help you wind down"
             },
             {
