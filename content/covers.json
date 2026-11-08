@@ -35,6 +35,15 @@
     "photographerUrl": "https://unsplash.com/@kellysikkema?utm_source=voxen_dev_blog&utm_medium=referral",
     "unsplashUrl": "https://unsplash.com/photos/boy-sitting-on-chair-beside-table-using-tablet-computer-tQPgM1k6EbQ?utm_source=voxen_dev_blog&utm_medium=referral"
   },
+  "games-to-play-before-bed": {
+    "query": "cozy bedside lamp book",
+    "id": "QEVwQcqKRRM",
+    "raw": "https://images.unsplash.com/photo-1757796859729-270d1e3ad4d5",
+    "alt": "Open book on bedside table with lamp",
+    "photographer": "Clay Banks",
+    "photographerUrl": "https://unsplash.com/@claybanks?utm_source=voxen_dev_blog&utm_medium=referral",
+    "unsplashUrl": "https://unsplash.com/photos/open-book-on-bedside-table-with-lamp-QEVwQcqKRRM?utm_source=voxen_dev_blog&utm_medium=referral"
+  },
   "hangul-stroke-order": {
     "query": "pencil square grid notebook",
     "id": "IZj7vckPGiw",
