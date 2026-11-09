@@ -289,7 +289,7 @@
               "kw": "does writing help you learn Japanese",
               "type": "info",
               "priority": 1,
-              "status": "queued",
+              "status": "used",
               "angle": "active recall + motor memory; then the app"
             },
             {
