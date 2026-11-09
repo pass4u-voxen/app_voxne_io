@@ -255,7 +255,7 @@
               "kw": "apps to keep kids busy",
               "type": "info",
               "priority": 3,
-              "status": "queued",
+              "status": "used",
               "angle": "quiet-time app for travel/restaurants"
             }
           ]
