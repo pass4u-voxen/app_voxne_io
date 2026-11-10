@@ -205,5 +205,14 @@
     "photographer": "Aspen Metzger",
     "photographerUrl": "https://unsplash.com/@aspen_dianne?utm_source=voxen_dev_blog&utm_medium=referral",
     "unsplashUrl": "https://unsplash.com/photos/a-candle-and-a-book-on-a-chair-L4Ia_dBBPWo?utm_source=voxen_dev_blog&utm_medium=referral"
+  },
+  "virtual-travel-ideas": {
+    "query": "globe map coffee table",
+    "id": "5o34qOu9oQs",
+    "raw": "https://images.unsplash.com/photo-1765527977786-93d61f48a963",
+    "alt": "A stylized globe with intricate blue and gold patterns",
+    "photographer": "Gaël Gaborel - OrbisTerrae",
+    "photographerUrl": "https://unsplash.com/@orbisterrae?utm_source=voxen_dev_blog&utm_medium=referral",
+    "unsplashUrl": "https://unsplash.com/photos/a-stylized-globe-with-intricate-blue-and-gold-patterns-5o34qOu9oQs?utm_source=voxen_dev_blog&utm_medium=referral"
   }
 }
