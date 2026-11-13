@@ -89,6 +89,15 @@
     "photographerUrl": "https://unsplash.com/@enginakyurt?utm_source=voxen_dev_blog&utm_medium=referral",
     "unsplashUrl": "https://unsplash.com/photos/notebook-and-pen-on-white-IZj7vckPGiw?utm_source=voxen_dev_blog&utm_medium=referral"
   },
+  "hiragana-chart": {
+    "query": "japanese workbook pencil eraser",
+    "id": "NP-ANwG4gI8",
+    "raw": "https://images.unsplash.com/photo-1517237284472-3b62e4863e4b",
+    "alt": "red and black pen on white surface",
+    "photographer": "Nik",
+    "photographerUrl": "https://unsplash.com/@helloimnik?utm_source=voxen_dev_blog&utm_medium=referral",
+    "unsplashUrl": "https://unsplash.com/photos/red-and-black-pen-on-white-surface-NP-ANwG4gI8?utm_source=voxen_dev_blog&utm_medium=referral"
+  },
   "hiragana-stroke-order": {
     "query": "hiragana",
     "id": "UyVbyimlAgE",
