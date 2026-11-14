@@ -488,7 +488,7 @@
               "kw": "learn Korean alphabet first",
               "type": "info",
               "priority": 2,
-              "status": "queued",
+              "status": "used",
               "angle": "why alphabet-first + write it"
             },
             {
