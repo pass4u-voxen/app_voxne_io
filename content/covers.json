@@ -53,6 +53,15 @@
     "photographerUrl": "https://unsplash.com/@4dgraphic?utm_source=voxen_dev_blog&utm_medium=referral",
     "unsplashUrl": "https://unsplash.com/photos/person-sitting-and-writing-don-9N68zG9o9IY?utm_source=voxen_dev_blog&utm_medium=referral"
   },
+  "cozy-mobile-games": {
+    "query": "warm cafe table smartphone tea",
+    "id": "_9rMpg5aI8k",
+    "raw": "https://images.unsplash.com/photo-1790749870991-dab5a8cb1848",
+    "alt": "Four people talking while drinking coffee at a wooden table in a cafe",
+    "photographer": "Vitaly Gariev",
+    "photographerUrl": "https://unsplash.com/@silverkblack?utm_source=voxen_dev_blog&utm_medium=referral",
+    "unsplashUrl": "https://unsplash.com/photos/people-talking-at-cafe-wooden-table-_9rMpg5aI8k?utm_source=voxen_dev_blog&utm_medium=referral"
+  },
   "does-writing-help-you-learn-japanese": {
     "query": "notebook pencil study desk",
     "id": "6e7F96dBlAA",
