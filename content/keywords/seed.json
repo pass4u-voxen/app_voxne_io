@@ -310,7 +310,7 @@
               "kw": "why can't I remember Japanese",
               "type": "info",
               "priority": 3,
-              "status": "queued",
+              "status": "used",
               "angle": "passive input problem -> switch to writing"
             }
           ]
