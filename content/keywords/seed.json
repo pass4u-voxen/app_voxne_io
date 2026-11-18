@@ -413,7 +413,7 @@
               "kw": "learn Hangul by writing",
               "type": "info",
               "priority": 1,
-              "status": "queued",
+              "status": "used",
               "angle": "step-by-step write-along for Hangul"
             },
             {
