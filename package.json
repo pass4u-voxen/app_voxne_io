@@ -1,0 +1,15 @@
+{
+  "name": "app-voxen-dev-blog",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "VOXEN 앱·게임 개발 블로그 (app.voxen.io) — 마크다운 → 정적 HTML 생성기",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "serve": "node scripts/build.mjs && cd site && python3 -m http.server 8787"
+  },
+  "dependencies": {
+    "gray-matter": "4.0.3",
+    "marked": "14.1.3"
+  }
+}
