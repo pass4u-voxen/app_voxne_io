@@ -52,6 +52,13 @@
               "priority": 3,
               "status": "used",
               "angle": "quiet the mind before bed with a calm activity"
+            },
+            {
+              "kw": "quiet hobbies for adults",
+              "type": "info",
+              "priority": 2,
+              "status": "queued",
+              "angle": "low-noise, low-pressure hobbies and how to pick one that fits your evenings"
             }
           ]
         },
@@ -84,8 +91,9 @@
               "kw": "best relaxing apps",
               "type": "compare",
               "priority": 3,
-              "status": "queued",
-              "angle": "apps that actually help you slow down"
+              "status": "skipped",
+              "angle": "apps that actually help you slow down",
+              "skipReason": "near-duplicate of an existing post"
             }
           ]
         },
@@ -118,8 +126,23 @@
               "kw": "free coloring games",
               "type": "transact",
               "priority": 3,
+              "status": "skipped",
+              "angle": "free coloring — a new city free every day",
+              "skipReason": "near-duplicate of an existing post"
+            },
+            {
+              "kw": "mindful coloring",
+              "type": "info",
+              "priority": 2,
               "status": "queued",
-              "angle": "free coloring — a new city free every day"
+              "angle": "how to color mindfully: attention, pace, color choice, stopping before it feels like work"
+            },
+            {
+              "kw": "watercolor for beginners",
+              "type": "info",
+              "priority": 2,
+              "status": "queued",
+              "angle": "first watercolor basics: water ratio, wet-on-wet vs wet-on-dry, layering light to dark"
             }
           ]
         },
@@ -145,8 +168,23 @@
               "kw": "things to do when you miss traveling",
               "type": "info",
               "priority": 3,
+              "status": "skipped",
+              "angle": "travel-at-home list",
+              "skipReason": "near-duplicate of an existing post"
+            },
+            {
+              "kw": "post vacation blues",
+              "type": "info",
+              "priority": 2,
               "status": "queued",
-              "angle": "travel-at-home list"
+              "angle": "why the return home feels flat and small ways to carry the trip into ordinary weeks"
+            },
+            {
+              "kw": "most beautiful cities in the world",
+              "type": "info",
+              "priority": 3,
+              "status": "queued",
+              "angle": "cities loved for specific, visual reasons (light, color, streets), not a generic top list"
             }
           ]
         }
@@ -337,8 +375,9 @@
               "kw": "how to learn hiragana fast",
               "type": "info",
               "priority": 2,
-              "status": "queued",
-              "angle": "fast but real: write, cover, recall"
+              "status": "skipped",
+              "angle": "fast but real: write, cover, recall",
+              "skipReason": "near-duplicate of an existing post"
             },
             {
               "kw": "katakana vs hiragana",
@@ -353,6 +392,34 @@
               "priority": 3,
               "status": "used",
               "angle": "chart + the order to actually learn them"
+            },
+            {
+              "kw": "katakana stroke order",
+              "type": "info",
+              "priority": 1,
+              "status": "queued",
+              "angle": "katakana stroke order with the look-alike pairs (シ/ツ, ソ/ン)"
+            },
+            {
+              "kw": "how to memorize katakana",
+              "type": "info",
+              "priority": 1,
+              "status": "queued",
+              "angle": "katakana after hiragana: loanword practice, look-alikes, writing from memory"
+            },
+            {
+              "kw": "dakuten and handakuten",
+              "type": "info",
+              "priority": 2,
+              "status": "queued",
+              "angle": "the two marks that turn か into が and は into ぱ, with writing practice"
+            },
+            {
+              "kw": "small tsu in Japanese",
+              "type": "info",
+              "priority": 2,
+              "status": "queued",
+              "angle": "what っ does (double consonant), how to read, write and romanize it"
             }
           ]
         },
@@ -364,8 +431,9 @@
               "kw": "how to learn Japanese for beginners",
               "type": "info",
               "priority": 2,
-              "status": "queued",
-              "angle": "roadmap: start by writing kana"
+              "status": "skipped",
+              "angle": "roadmap: start by writing kana",
+              "skipReason": "near-duplicate of an existing post"
             },
             {
               "kw": "how to start learning Japanese",
@@ -378,8 +446,16 @@
               "kw": "best app to learn Japanese writing",
               "type": "compare",
               "priority": 3,
+              "status": "skipped",
+              "angle": "writing-app comparison",
+              "skipReason": "near-duplicate of an existing post"
+            },
+            {
+              "kw": "how to write kanji for beginners",
+              "type": "info",
+              "priority": 2,
               "status": "queued",
-              "angle": "writing-app comparison"
+              "angle": "stroke-order rules and radicals for a first set of kanji"
             }
           ]
         }
@@ -434,8 +510,9 @@
               "kw": "practice writing Korean alphabet",
               "type": "transact",
               "priority": 3,
-              "status": "queued",
-              "angle": "daily write-along practice"
+              "status": "skipped",
+              "angle": "daily write-along practice",
+              "skipReason": "near-duplicate of an existing post"
             }
           ]
         },
@@ -470,6 +547,34 @@
               "priority": 3,
               "status": "used",
               "angle": "read + write together"
+            },
+            {
+              "kw": "how to write your name in Korean",
+              "type": "info",
+              "priority": 1,
+              "status": "queued",
+              "angle": "turning a foreign name into Hangul syllable blocks, with common sound choices"
+            },
+            {
+              "kw": "Korean batchim",
+              "type": "info",
+              "priority": 1,
+              "status": "queued",
+              "angle": "final consonants: the seven batchim sounds and how to write them in a block"
+            },
+            {
+              "kw": "Korean double consonants",
+              "type": "info",
+              "priority": 1,
+              "status": "queued",
+              "angle": "ㄲ ㄸ ㅃ ㅆ ㅉ: how to write them and hear plain vs tense vs aspirated"
+            },
+            {
+              "kw": "Korean syllable blocks",
+              "type": "info",
+              "priority": 2,
+              "status": "queued",
+              "angle": "how consonants and vowels stack into blocks, with the main block shapes"
             }
           ]
         },
@@ -495,8 +600,9 @@
               "kw": "best app to learn Korean writing",
               "type": "compare",
               "priority": 3,
-              "status": "queued",
-              "angle": "app comparison for writing"
+              "status": "skipped",
+              "angle": "app comparison for writing",
+              "skipReason": "near-duplicate of an existing post"
             }
           ]
         }
