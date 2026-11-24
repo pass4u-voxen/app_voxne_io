@@ -173,28 +173,28 @@
               "kw": "new brawl stars brawler",
               "type": "info",
               "priority": 1,
-              "status": "queued",
+              "status": "paused",
               "angle": "intro the new Brawler + color it (publish right after update = traffic spike)"
             },
             {
               "kw": "brawl stars new character coloring",
               "type": "transact",
               "priority": 1,
-              "status": "queued",
+              "status": "paused",
               "angle": "color the newest character now"
             },
             {
               "kw": "brawl stars [new brawler name] coloring",
               "type": "transact",
               "priority": 1,
-              "status": "queued",
+              "status": "paused",
               "angle": "swap in the real new Brawler name — event content"
             },
             {
               "kw": "brawl stars new update",
               "type": "info",
               "priority": 2,
-              "status": "queued",
+              "status": "paused",
               "angle": "update recap -> color the new Brawler"
             }
           ]
@@ -228,7 +228,7 @@
               "kw": "brawl stars drawings easy",
               "type": "info",
               "priority": 3,
-              "status": "queued",
+              "status": "paused",
               "angle": "simple Brawler art for kids"
             }
           ]

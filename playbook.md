@@ -19,7 +19,7 @@ Everything you need is in this repo: pick a keyword from `content/keywords/seed.
 
 ## Each run — do these in order
 
-1. **Pick a target keyword.** Open `content/keywords/seed.json`. Choose the highest‑priority keyword with `status: "queued"` (priority 1 first). Rotate apps so no single app is posted many days in a row. Avoid the `brawlcoloring` "seasonal" cluster unless a Brawl Stars update actually just dropped.
+1. **Pick a target keyword.** Open `content/keywords/seed.json`. Choose the highest‑priority keyword with `status: "queued"` (priority 1 first). Rotate apps so no single app is posted many days in a row. **Never pick a `brawlcoloring` keyword — new posts for that app are stopped (see below).**
 2. **Cannibalization check.** Scan existing `content/posts/*.md` frontmatter `targetKeyword`. If the chosen keyword (or a near‑duplicate intent) is already covered, pick the next one instead. Never write two posts for the same query.
 3. **Write the article** (see Quality bar + Structure below). English, for a global audience. No app promotion (see above).
 4. **Create the file** `content/posts/YYYY-MM-DD-<slug>.md` with the exact frontmatter below. `<slug>` is short, keyword‑based, lowercase‑hyphen (e.g. `how-to-memorize-hiragana`). URL becomes `app.voxen.io/<slug>/`.
@@ -35,7 +35,7 @@ Everything you need is in this repo: pick a keyword from `content/keywords/seed.
 ```yaml
 ---
 title: "<compelling title that contains the target keyword naturally>"
-app: <paintrip | brawlcoloring | everyday_japanese | daily_hangul>
+app: <paintrip | everyday_japanese | daily_hangul>
 targetKeyword: <the exact keyword you targeted>
 date: YYYY-MM-DD
 updated: YYYY-MM-DD
@@ -84,7 +84,7 @@ The `app` field only decides which banner shows. Choose it by topic fit.
 → Topics: stress relief, self‑care, relaxing hobbies, coloring for adults, wanderlust, travel from home.
 → ⚠️ **YMYL / mental wellness.** Frame as *relaxation / stress relief / a calming hobby*. **Never** medical claims (no "treats anxiety/depression"). No guarantees.
 
-**brawlcoloring** — Brawl Stars Coloring, a fan app where kids color Brawlers (and learn them). Audience: kids who love Brawl Stars + their parents.
+**brawlcoloring** — ⛔ **STOPPED: do not write any new posts for this app, not even for a new Brawler/update, and do not use it as the `app` field.** Its keywords are `status: "paused"`. Existing posts stay as they are. (Kept for reference:) Brawl Stars Coloring, a fan app where kids color Brawlers (and learn them). Audience: kids who love Brawl Stars + their parents.
 → Topics: coloring for kids, child development through play, screen time, kids and their favorite characters. **Seasonal:** when a new Brawler/update drops, that's the best traffic.
 → ⚠️ **Trademark.** Fan‑made only. Never imply official affiliation or endorsement by Supercell.
 
