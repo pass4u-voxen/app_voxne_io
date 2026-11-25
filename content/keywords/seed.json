@@ -397,7 +397,7 @@
               "kw": "katakana stroke order",
               "type": "info",
               "priority": 1,
-              "status": "queued",
+              "status": "used",
               "angle": "katakana stroke order with the look-alike pairs (シ/ツ, ソ/ン)"
             },
             {
