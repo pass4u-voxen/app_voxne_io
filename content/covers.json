@@ -242,6 +242,15 @@
     "photographerUrl": "https://unsplash.com/@leventco?utm_source=voxen_dev_blog&utm_medium=referral",
     "unsplashUrl": "https://unsplash.com/photos/antique-book-with-japanese-calligraphy-_jOjRTodMFk?utm_source=voxen_dev_blog&utm_medium=referral"
   },
+  "katakana-stroke-order": {
+    "query": "japanese cafe menu board",
+    "id": "TTdj0aDxKm8",
+    "raw": "https://images.unsplash.com/photo-1568299661475-a4b082595a7a",
+    "alt": "store facade",
+    "photographer": "Hiu Yan Chelsia Choi",
+    "photographerUrl": "https://unsplash.com/@hiholdmyhand?utm_source=voxen_dev_blog&utm_medium=referral",
+    "unsplashUrl": "https://unsplash.com/photos/store-facade-TTdj0aDxKm8?utm_source=voxen_dev_blog&utm_medium=referral"
+  },
   "katakana-vs-hiragana": {
     "query": "tokyo street signs neon",
     "id": "alY6_OpdwRQ",
