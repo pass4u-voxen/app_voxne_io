@@ -305,6 +305,15 @@
     "photographerUrl": "https://unsplash.com/@miracleday?utm_source=voxen_dev_blog&utm_medium=referral",
     "unsplashUrl": "https://unsplash.com/photos/white-pink-and-green-floral-ceramic-plate-kzOQMBAgqCo?utm_source=voxen_dev_blog&utm_medium=referral"
   },
+  "quiet-hobbies-for-adults": {
+    "query": "knitting yarn armchair lamp",
+    "id": "p1ZgObLpa0A",
+    "raw": "https://images.unsplash.com/photo-1513949474464-08a0bdb4fa54",
+    "alt": "white yarn on gray surface",
+    "photographer": "Kelly Sikkema",
+    "photographerUrl": "https://unsplash.com/@kellysikkema?utm_source=voxen_dev_blog&utm_medium=referral",
+    "unsplashUrl": "https://unsplash.com/photos/white-yarn-on-gray-surface-p1ZgObLpa0A?utm_source=voxen_dev_blog&utm_medium=referral"
+  },
   "relaxing-games": {
     "query": "cozy blanket tea lamp",
     "id": "L4Ia_dBBPWo",
